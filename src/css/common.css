@@ -1,0 +1,152 @@
+/* start images */
+.aura1 {
+  background-image: url("../images/cosmos-mixed-sensation-seeds.jpg");
+  background-image: url("../images/cosmos-mixed-sensation-seeds-seed.jpg");
+}
+
+.aura2 {
+  background-image: url("../images/brinjal-seeds-seed.jpg");
+  background-image: url("../images/brinjal-seeds.jpg");
+}
+
+.aura3 {
+  background-image: url("../images/broccoli-seeds-seed.jpg");
+  background-image: url("../images/broccoli-seeds.jpg");
+}
+
+.aura4 {
+  background-image: url("../images/capsicum-yellow-seeds-seed.jpg");
+  background-image: url("../images/capsicum-yellow-seeds.jpg");
+}
+
+.aura5 {
+  background-image: url("../images/carrot-seeds-seed.jpg");
+  background-image: url("../images/carrot-seeds.jpg");
+}
+
+.aura6 {
+  background-image: url("../images/strawberry-seeds-seed.jpg");
+  background-image: url("../images/strawberry-seeds.jpg");
+}
+
+.aura7 {
+  background-image: url("../images/round-tomato-seeds.seed.jpg");
+  background-image: url("../images/round-tomato-seeds.jpg");
+}
+
+.aura8 {
+  background-image: url("../images/chili-long-green-seeds-seed.jpg");
+  background-image: url("../images/chili-long-green-seeds.jpg");
+}
+
+.aura9 {
+  background-image: url("../images/mint-seeds-seed.jpg");
+  background-image: url("../images/mint-seeds.jpg");
+}
+
+.aura10 {
+  background-image: url("../images/lotus-seeds-seed.jpg");
+  background-image: url("../images/lotus-seeds.jpg");
+}
+/* end images */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+.img-box {
+  background-color: gray;
+  min-width: 200px;
+  width: 200px;
+  height: 200px;
+  transition: 0.2s;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.item-img {
+  min-width: 200px;
+  width: 200px;
+  height: 200px;
+  transition: 0.4s;
+}
+
+.item-img:hover {
+  transform: scale(1.25);
+}
+
+.card-body {
+  background-image: linear-gradient(to bottom right, #d0e5fb, #fff);
+}
+
+.card-header {
+  background-image: linear-gradient(to bottom left, #d0e5fb, #fff);
+}
+
+.cart-count-text {
+  color: blue;
+}
+
+.navbar {
+  margin: 10px 0;
+}
+
+.navbar ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  list-style: none;
+  border-bottom: 1px solid #a3a3a3;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li a {
+  color: #454545;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 12px;
+}
+
+.navbar ul li.active a {
+  color: blue;
+  font-weight: bold;
+}
+
+.edit-item-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form {
+  width: 100%;
+  border: 1px solid #cac7c7;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.item-img:hover {
+  transform: scale(1.25);
+}
+
+ul {
+  list-style: square;
+}
+
+.jumbotron {
+  background-color: #d0e5fb !important;
+}
+
+.item {
+  border-bottom: 1px solid #454545;
+}
