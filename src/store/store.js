@@ -10,6 +10,7 @@ export const store = new Vuex.Store({
     items: items,
     counter: 0,
     cartItems: [],
+    editItem: false,
   },
   getters: {
     filterItems(state) {

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h3>Cart page</h3>
-    <div class="row">
+    <div class="row" v-if="!getEditCardStatus">
       <card
         class="col-12 col-xs-6 col-sm-4 col-md-4 col-lg-3 text-center"
         v-for="(item, index) in getCartItems"
@@ -9,6 +9,9 @@
         :key="index"
         :index="index"
       ></card>
+    </div>
+    <div v-else>
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -21,6 +24,9 @@ export default {
   computed: {
     getCartItems() {
       return this.$store.getters.getCartItems;
+    },
+    getEditCardStatus() {
+      return this.$store.state.editItem;
     }
   },
   mounted() {

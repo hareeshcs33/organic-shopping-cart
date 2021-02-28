@@ -13,23 +13,30 @@
           <div>Price: {{ item.price }}</div>
         </div>
         <div class="d-flex align-items-center cta-wrapper">
-          <div class="d-flex">
+          <div class="d-flex flex-column">
             <button
-              class="btn btn-info btn-md px-5 mr-2"
+              class="btn btn-info btn-md px-5 mb-1"
               @click="addToCart(item)"
               v-if="!item.cart"
             >
               Add Cart
             </button>
             <button
-              class="btn btn-info btn-md px-5 mr-2"
+              class="btn btn-info btn-md px-5 mb-1"
               @click="removeFromCart(item)"
               v-else
             >
-              Remove Item From Cart
+              Remove From Cart
             </button>
+            <button
+              class="btn btn-info btn-md px-5 mb-1"
+              @click="editCard(item)"
+              v-if="item.cart"
+            >
+              Edit Item
+            </button>
+            <p class="mb-0">{{ message }}</p>
           </div>
-          <p class="mb-0">{{ message }}</p>
         </div>
       </div>
     </div>
@@ -65,12 +72,18 @@ export default {
     },
     addRemoveCartText() {
       this.message = this.item.cart
-        ? "Added item from cart"
+        ? "Added item to cart"
         : "Removed item from cart";
       setTimeout(() => {
         this.message = "";
       }, 3000);
       return this.message;
+    },
+    editCard(item) {
+      console.log("edit item", item);
+      localStorage.setItem("vfl-edit", JSON.stringify(item));
+      this.$store.state.editItem = true;
+      this.$router.push("edit-item/" + item.id);
     }
   }
 };
