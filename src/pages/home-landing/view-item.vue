@@ -1,37 +1,37 @@
 <template>
   <div class="card mb-3">
-    <div class="card-header" @click.prevent="viewItem(item)">
-      <h5>{{ item.product }}</h5>
+    <div class="card-header">
+      <h5>{{ viewObj.product }}</h5>
     </div>
     <div class="card-body text-center">
       <div class="d-flex flex-column align-items-center justify-content-center">
         <div class="img-box">
-          <img class="item-img" :src="'/static/img/' + item.src" />
+          <img class="item-img" :src="'/static/img/' + viewObj.src" />
         </div>
         <div class="py-3">
-          <div>Product: {{ item.product }}</div>
-          <div>Price: {{ item.price }}</div>
+          <div>Product: {{ viewObj.product }}</div>
+          <div>Price: {{ viewObj.price }}</div>
         </div>
         <div class="d-flex align-items-center cta-wrapper">
           <div class="d-flex flex-column">
             <button
               class="btn btn-info btn-md px-5 mb-1"
-              @click="addToCart(item)"
-              v-if="!item.cart"
+              @click="addToCart(viewObj)"
+              v-if="!viewObj.cart"
             >
               Add Cart
             </button>
             <button
               class="btn btn-info btn-md px-5 mb-1"
-              @click="removeFromCart(item)"
+              @click="removeFromCart(viewObj)"
               v-else
             >
               Remove From Cart
             </button>
             <button
               class="btn btn-info btn-md px-5 mb-1"
-              @click="editCard(item)"
-              v-if="item.cart"
+              @click="editCard(viewObj)"
+              v-if="viewObj.cart"
             >
               Edit Item
             </button>
@@ -44,18 +44,20 @@
 </template>
 <script>
 export default {
-  props: {
-    item: {
-      type: Object
-    },
-    index: {
-      type: Number
-    }
-  },
   data() {
     return {
-      message: ""
+      message: "",
+      id: null,
+      viewObj: null,
+      casheBeforeViewObj: null
     };
+  },
+  created() {
+    this.id = this.$route.params.id;
+    this.viewObj = JSON.parse(localStorage.getItem("view-item"));
+    this.casheBeforeViewObj = JSON.parse(JSON.stringify(this.viewObj));
+    console.log(this.id);
+    console.log("viewObj", this.viewObj);
   },
   methods: {
     addToCart(item) {
@@ -63,14 +65,12 @@ export default {
       console.log(item);
       this.addRemoveCartText();
       this.$store.commit("addToCart", item.id);
-      this.$router.push("/cart");
     },
     removeFromCart(item) {
       item.cart = false;
       console.log(item);
       this.addRemoveCartText();
       this.$store.commit("removeFromCart", item.id);
-      this.$router.push("/");
     },
     addRemoveCartText() {
       this.message = this.item.cart
@@ -82,16 +82,11 @@ export default {
       return this.message;
     },
     editCard(item) {
+      this.$store.state.editItem = true;
       console.log("edit item", item);
       localStorage.setItem("vfl-edit", JSON.stringify(item));
       this.$store.state.editItem = true;
       this.$router.push("edit-item/" + item.id);
-    },
-    viewItem(item) {
-      localStorage.setItem("view-item", JSON.stringify(item));
-      this.$store.commit("viewItem", item.id);
-      this.$router.push("/view-item");
-      console.log("view Item");
     }
   }
 };

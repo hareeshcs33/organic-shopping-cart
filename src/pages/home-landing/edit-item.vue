@@ -99,13 +99,13 @@ export default {
       console.log("saved items", this.editValObj);
       this.$store.state.editItem = false;
       this.$store.commit("editDone", this.editValObj);
-      this.$router.push("/home");
+      this.$router.push("/cart");
     },
     editCancel() {
       this.editObj = this.casheBeforeEditObj;
       console.log("cancelled", this.editObj);
       this.$store.state.editItem = false;
-      this.$router.push("/home");
+      this.$router.push("/cart");
     }
   }
 };

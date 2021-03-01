@@ -11,6 +11,7 @@ export const store = new Vuex.Store({
     counter: 0,
     cartItems: [],
     editItem: false,
+    viewItem: null,
   },
   getters: {
     filterItems(state) {
@@ -21,7 +22,7 @@ export const store = new Vuex.Store({
     },
     getCartItems(state, payload) {
       return state.cartItems;
-    }
+    },
   },
   mutations: {
     increaseCount(state) {
@@ -43,6 +44,10 @@ export const store = new Vuex.Store({
     },
     removeFromCart(state, payload) {
       state.cartItems = state.cartItems.filter(item => item.id !== payload);
+    },
+    viewItem(state, payload) {
+      state.viewItem = state.items.filter(item => item.id == payload);;
+      // console.log(state.viewItem);
     }
   },
   actions: {

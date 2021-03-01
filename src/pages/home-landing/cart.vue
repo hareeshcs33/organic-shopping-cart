@@ -1,6 +1,10 @@
 <template>
   <div class="container">
     <h3>Cart page</h3>
+    <div v-if="getCartItems.length == 0">
+      <div>No Cart Items</div>
+      <router-link to="/">back to home page</router-link>
+    </div>
     <div class="row" v-if="!getEditCardStatus">
       <card
         class="col-12 col-xs-6 col-sm-4 col-md-4 col-lg-3 text-center"
