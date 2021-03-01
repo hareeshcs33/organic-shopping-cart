@@ -1,7 +1,11 @@
 <template>
   <div class="card mb-3">
-    <div class="card-header" @click.prevent="viewItem(item)">
-      <h6>{{ item.product }}</h6>
+    <div
+      class="card-header d-flex align-items-center justify-content-center"
+      @click.prevent="viewItem(item)"
+      title="view Item"
+    >
+      <h6 class="mb-0">{{ item.product }}</h6>
     </div>
     <div class="card-body text-center">
       <div

@@ -61,6 +61,11 @@
   box-sizing: border-box;
 }
 
+.card-header {
+  min-height: 65px;
+  cursor: pointer;
+}
+
 .img-box {
   background-color: gray;
   min-width: 200px;
@@ -80,6 +85,26 @@
 
 .item-img:hover {
   transform: scale(1.25);
+}
+
+.small-img-box {
+  background-color: gray;
+  min-width: 150px;
+  width: 150px;
+  height: 150px;
+  transition: 0.2s;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.small-item-img-view {
+  min-width: 150px;
+  width: 150px;
+  height: 150px;
+  transition: 0.4s;
+}
+.small-item-img-view:hover {
+  transform: scale(1.1);
 }
 
 .card-body {

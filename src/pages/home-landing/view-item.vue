@@ -47,11 +47,12 @@
         </div>
         <div class="d-flex">
           <div class="text-left">
-            <h5 class="font-weight-bold">{{ viewObj.product }}</h5>
-            <div><strong>Seed Count:</strong> {{ viewObj.seedsCount }}</div>
-            <p>
-              <strong>Product Details:</strong> {{ viewObj.productDetails }}
-            </p>
+            <h5>{{ viewObj.product }}</h5>
+            <div>Seed Count: {{ viewObj.seedsCount }}</div>
+            <p>Product Details: {{ viewObj.productDetails }}</p>
+            <div>Sunlight: {{ viewObj.Sunlight }}</div>
+            <div>Time Till Harvest: {{ viewObj.TimeTillHarvest }}</div>
+            <div>discount: {{ viewObj.discount }}</div>
             <div class="d-flex align-items-center mb-3">
               <strong class="pr-2">Qty:</strong>
               <select>
@@ -72,6 +73,20 @@
             >
               Add Cart
             </button>
+            <div class="d-flex">
+              <div class="small-img-box mr-2">
+                <img
+                  class="small-item-img-view"
+                  :src="'/static/img/' + viewObj.seedPath"
+                />
+              </div>
+              <div class="small-img-box">
+                <img
+                  class="small-item-img-view"
+                  :src="'/static/img/' + viewObj.src"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
