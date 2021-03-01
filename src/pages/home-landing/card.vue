@@ -1,15 +1,17 @@
 <template>
   <div class="card mb-3">
     <div class="card-header" @click.prevent="viewItem(item)">
-      <h5>{{ item.product }}</h5>
+      <h6>{{ item.product }}</h6>
     </div>
     <div class="card-body text-center">
-      <div class="d-flex flex-column align-items-center justify-content-center">
+      <div
+        class="d-flex flex-column align-items-center justify-content-between h-100"
+      >
         <div class="img-box">
           <img class="item-img" :src="'/static/img/' + item.src" />
         </div>
         <div class="py-3">
-          <div>Product: {{ item.product }}</div>
+          <div>{{ item.product }}</div>
           <div>Price: {{ item.price }}</div>
         </div>
         <div class="d-flex align-items-center cta-wrapper">

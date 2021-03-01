@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
     <ul class="nav">
-      <router-link to="/" tag="li" active-class="active"
+      <router-link to="/" tag="li" active-class="active" exact
         ><a>Home</a></router-link
       >
       <router-link to="/cart" tag="li" active-class="active"
