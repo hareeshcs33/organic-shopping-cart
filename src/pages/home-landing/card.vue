@@ -102,3 +102,11 @@ export default {
   }
 };
 </script>
+<style scoped>
+.card-header:hover {
+  cursor: pointer;
+}
+.card-header:hover h6 {
+  color: blue;
+}
+</style>

@@ -48,6 +48,26 @@
   background-image: url("../images/lotus-seeds-seed.jpg");
   background-image: url("../images/lotus-seeds.jpg");
 }
+
+.aura11 {
+  background-image: url("../images/zinnia-double-mix-seeds-seed.jpg");
+  background-image: url("../images/zinnia-double-mix-seeds.jpg");
+}
+.aura12 {
+  background-image: url("../images/lady-finger-seeds-seed.jpg");
+  background-image: url("../images/lady-finger-seeds.jpg");
+}
+
+.aura13 {
+  background-image: url("../images/beans-seeds-seed.jpg");
+  background-image: url("../images/beans-seeds.jpg");
+}
+/* 
+.aura14 {
+  background-image: url("../images/zinnia-double-mix-seeds-seed.jpg");
+  background-image: url("../images/zinnia-double-mix-seeds.jpg");
+} */
+
 /* end images */
 
 * {
@@ -63,7 +83,6 @@
 
 .card-header {
   min-height: 65px;
-  cursor: pointer;
 }
 
 .img-box {
