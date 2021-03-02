@@ -62,11 +62,11 @@
   background-image: url("../images/beans-seeds-seed.jpg");
   background-image: url("../images/beans-seeds.jpg");
 }
-/* 
+
 .aura14 {
-  background-image: url("../images/zinnia-double-mix-seeds-seed.jpg");
-  background-image: url("../images/zinnia-double-mix-seeds.jpg");
-} */
+  background-image: url("../images/chrysanthemum-mixed-seeds-seed.jpg");
+  background-image: url("../images/chrysanthemum-mixed-seeds.jpg");
+}
 
 /* end images */
 
@@ -108,19 +108,19 @@
 
 .small-img-box {
   background-color: gray;
-  min-width: 150px;
-  width: 150px;
-  height: 150px;
+  min-width: 120px;
+  width: 120px;
+  height: 120px;
   transition: 0.2s;
   overflow: hidden;
   border-radius: 3px;
 }
 
 .small-item-img-view {
-  min-width: 150px;
-  width: 150px;
-  height: 150px;
-  transition: 0.4s;
+  min-width: 120px;
+  width: 120px;
+  height: 120px;
+  transition: 0.3s;
 }
 .small-item-img-view:hover {
   transform: scale(1.1);
