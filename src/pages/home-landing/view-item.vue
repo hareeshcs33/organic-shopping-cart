@@ -30,7 +30,7 @@
           </div>
           <div class="d-flex align-items-center cta-wrapper">
             <div class="d-flex flex-column">
-              <!-- <button
+              <button
                 class="btn btn-info btn-md px-5 mb-1"
                 @click="addToCart(viewObj)"
                 v-if="!viewObj.cart"
@@ -43,7 +43,7 @@
                 v-else
               >
                 Remove From Cart
-              </button> -->
+              </button>
               <button
                 class="btn btn-info btn-md px-5 mb-1"
                 @click="editCard(viewObj)"
@@ -81,10 +81,6 @@
                   <td>{{ viewObj.TimeTillHarvest }}</td>
                 </tr>
                 <tr>
-                  <td>discount:</td>
-                  <td>{{ viewObj.discount }}</td>
-                </tr>
-                <tr>
                   <td>Qty:</td>
                   <td>
                     <select v-model="viewObj.qty">
@@ -99,23 +95,34 @@
                     </select>
                   </td>
                 </tr>
+                <tr v-if="viewObj.qty > 1">
+                  <td>discount:</td>
+                  <td>{{ viewObj.discount }}</td>
+                </tr>
                 <tr>
                   <td>Price:</td>
                   <td>{{ viewObj.price }}</td>
                 </tr>
                 <tr>
                   <td>Total Price:</td>
-                  <td>₹{{ priceValue }}</td>
+                  <td>
+                    <span v-if="viewObj.qty == 1">₹{{ actualPriceValue }}</span>
+                    <span v-if="viewObj.qty > 1">₹{{ priceValue }}</span>
+                    <span v-if="viewObj.qty > 1" class="actual-price-value"
+                      >₹{{ actualPriceValue }}</span
+                    >
+                    <!-- <i class="fas fa-rupee-sign"></i> -->
+                  </td>
                 </tr>
               </tbody>
             </table>
-            <button
+            <!-- <button
               class="btn btn-info btn-md px-5 mb-1"
               @click="addToCart(viewObj)"
               v-if="!viewObj.cart"
             >
               Add Cart
-            </button>
+            </button> -->
           </div>
         </div>
       </div>
@@ -145,7 +152,12 @@ export default {
   computed: {
     priceValue() {
       const price = parseInt(this.viewObj.price.slice(1, 3));
-      return price * this.viewObj.qty;
+      const discount = parseInt(this.viewObj.discount.slice(1, 2));
+      return (price * this.viewObj.qty - discount).toFixed(2);
+    },
+    actualPriceValue() {
+      const price = parseInt(this.viewObj.price.slice(1, 3));
+      return (price * this.viewObj.qty).toFixed(2);
     }
   },
   methods: {
@@ -162,7 +174,7 @@ export default {
       this.$store.commit("removeFromCart", item.id);
     },
     addRemoveCartText() {
-      this.message = this.item.cart
+      this.message = this.viewObj.cart
         ? "Added item to cart"
         : "Removed item from cart";
       setTimeout(() => {
@@ -194,5 +206,10 @@ export default {
 }
 .item-details-table tbody tr td:first-child {
   white-space: nowrap;
+}
+.actual-price-value {
+  text-decoration: line-through;
+  padding-left: 5px;
+  color: #a3a3a3;
 }
 </style>

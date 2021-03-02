@@ -122,6 +122,7 @@
   height: 120px;
   transition: 0.3s;
 }
+
 .small-item-img-view:hover {
   transform: scale(1.1);
 }

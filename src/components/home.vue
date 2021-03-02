@@ -10,7 +10,7 @@
       ></card>
     </div>
     <div class="d-flex align-items-center justify-content-center flex-column">
-      <div class="m-3">1 - 10 of 13 items</div>
+      <div class="m-3">1 - 10 of {{ getItemLists.length }} items</div>
       <div class="cta-wrapper">
         <button class="btn btn-primary btn-sm px-3" :disabled="false">
           1
