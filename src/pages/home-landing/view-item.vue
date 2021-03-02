@@ -84,15 +84,18 @@
                   <td>Qty:</td>
                   <td>
                     <select v-model="viewObj.qty">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>10</option>
-                      <option>15</option>
-                      <option>20</option>
+                      <option v-for="num in 20" :key="num">{{ num }}</option>
                     </select>
+                    <span v-if="viewObj.qty == 1"
+                      >Buy more, save more,
+                      <a
+                        class="link"
+                        title="see offer details"
+                        @click="showOfferDetails"
+                      >
+                        Offers</a
+                      ></span
+                    >
                   </td>
                 </tr>
                 <tr v-if="viewObj.qty > 1">
@@ -127,6 +130,29 @@
         </div>
       </div>
     </div>
+    <div class="offer-details" :class="showOffer ? 'show' : ''">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Quantity</th>
+            <th>Price per item</th>
+            <th>Discount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2 items</td>
+            <td>₹20.00</td>
+            <td>₹5.00</td>
+          </tr>
+          <tr>
+            <td>5 items</td>
+            <td>₹20.00</td>
+            <td>₹10.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 <script>
@@ -136,7 +162,8 @@ export default {
       message: "",
       id: null,
       viewObj: null,
-      casheBeforeViewObj: null
+      casheBeforeViewObj: null,
+      showOffer: false
     };
   },
   created() {
@@ -188,6 +215,12 @@ export default {
       localStorage.setItem("vfl-edit", JSON.stringify(item));
       this.$store.state.editItem = true;
       this.$router.push("edit-item/" + item.id);
+    },
+    showOfferDetails() {
+      this.showOffer = !this.showOffer;
+      setTimeout(() => {
+        this.showOffer = false;
+      }, 8000);
     }
   }
 };
@@ -211,5 +244,17 @@ export default {
   text-decoration: line-through;
   padding-left: 5px;
   color: #a3a3a3;
+}
+.offer-details {
+  background-color: #fff;
+  max-width: 350px;
+  position: fixed;
+  top: 20%;
+  right: -350px;
+  z-index: 1;
+  transition: 1s;
+}
+.offer-details.show {
+  right: 2%;
 }
 </style>
