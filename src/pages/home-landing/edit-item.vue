@@ -8,6 +8,7 @@
           label="Product"
           placeholder="Product"
           v-model="editObj.product"
+          :disabled="true"
         ></input-text>
         <input-text
           class="col-6"
@@ -22,6 +23,7 @@
           type="number"
           placeholder="Price"
           v-model="editObj.price"
+          :disabled="true"
         ></input-text>
         <input-text
           class="col-6"
@@ -29,15 +31,8 @@
           type="number"
           placeholder="Discount"
           v-model="editObj.discount"
+          :disabled="true"
         ></input-text>
-        <drop-down
-          class="col-6"
-          label="color"
-          v-model="editObj.color"
-          :options="getColors"
-          :value="getColors"
-        ></drop-down>
-        {{ editObj.color }}
         <div class="col-12">
           <div class="d-flex">
             <button class="btn btn-success col-6 mx-1" @click="editDone">
@@ -77,11 +72,6 @@ export default {
     this.id = this.$route.params.id;
     this.editObj = JSON.parse(localStorage.getItem("vfl-edit"));
     this.casheBeforeEditObj = JSON.parse(JSON.stringify(this.editObj));
-  },
-  computed: {
-    getColors() {
-      return this.$store.state.colors;
-    }
   },
   methods: {
     editDone() {

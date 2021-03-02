@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h3>Cart page</h3>
-    <div v-if="getCartItems.length == 0">
+    <div v-if="getCartItems.length == 0 && !getEditCardStatus">
       <div>No Cart Items</div>
       <router-link to="/">back to home page</router-link>
     </div>
