@@ -1,9 +1,15 @@
 <template>
   <div class="container mb-5">
+    <div class="d-flex">
+      <a class="py-2 pr-2 link" @click="getSeedsFilter('all')">All Seeds</a>
+      <a class="p-2 link" @click="getSeedsFilter('flower')">Flower Seeds</a>
+      <a class="p-2 link" @click="getSeedsFilter('vegetable')">Vegetable Seeds</a>
+      <a class="p-2 link" @click="getSeedsFilter('fruit')">Fruit Seeds</a>
+    </div>
     <div class="row">
       <card
         class="col-12 col-xs-6 col-sm-4 col-md-4 col-lg-3 text-center"
-        v-for="(item, index) in getItemLists"
+        v-for="(item, index) in filteredItems"
         :item="item"
         :key="index"
         :index="index"
@@ -31,11 +37,26 @@ import Card from "../pages/home-landing/card.vue";
 export default {
   name: "home",
   data() {
-    return {};
+    return {
+      seedType: "all",
+      filteredItems: [],
+    };
   },
   computed: {
     getItemLists() {
       return this.$store.state.items;
+    }
+  },
+  created(){
+    this.getSeedsFilter('all');
+  },
+  methods: {
+    getSeedsFilter(seedType){
+      if(this.seedType == seedType){
+        this.filteredItems = this.getItemLists;
+      }else {
+        this.filteredItems = this.getItemLists.filter(item => item.seedType == seedType);
+      }
     }
   },
   components: {

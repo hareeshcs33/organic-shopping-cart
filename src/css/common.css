@@ -86,6 +86,10 @@
   box-sizing: border-box;
 }
 
+.link {
+  cursor: pointer;
+}
+
 .card-header {
   min-height: 65px;
 }
