@@ -1,9 +1,12 @@
 <template>
   <div class="container">
-    <h3>Cart page</h3>
-    <div v-if="getCartItems.length == 0 && !getEditCardStatus">
-      <div>No Cart Items</div>
-      <router-link to="/">back to home page</router-link>
+    <h3 v-if="!getEditCardStatus">Cart page</h3>
+    <div class="mx-auto" v-if="getCartItems.length == 0 && !getEditCardStatus">
+      <div class="empty-text text-center mb-3">Your Cart is empty!</div>
+      <div class="add-empty-text text-center mb-4">add items to it now.</div>
+      <button class="btn btn-dark px-5 d-block mx-auto">
+        <router-link to="/">shop now</router-link>
+      </button>
     </div>
     <div class="row" v-if="!getEditCardStatus">
       <card
@@ -38,3 +41,14 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.empty-text {
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+}
+.add-empty-text {
+  font-size: 14px;
+}
+</style>

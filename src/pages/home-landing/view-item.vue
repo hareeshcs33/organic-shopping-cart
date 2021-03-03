@@ -220,7 +220,7 @@ export default {
       this.showOffer = !this.showOffer;
       setTimeout(() => {
         this.showOffer = false;
-      }, 8000);
+      }, 15000);
     }
   }
 };

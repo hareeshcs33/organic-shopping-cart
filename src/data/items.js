@@ -14,7 +14,8 @@ export const items = [
     "id": 1,
     "src": "cosmos-mixed-sensation-seeds.jpg",
     "seedPath": "cosmos-mixed-sensation-seeds-seed.jpg",
-    "cart": false
+    "cart": false,
+    "seedType": "flower"
   },
   {
     "product": "Strawberry Seeds",
@@ -31,7 +32,8 @@ export const items = [
     "id": 2,
     "src": "strawberry-seeds.jpg",
     "seedPath": "strawberry-seeds-seed.jpg",
-    "cart": false
+    "cart": false,
+    "seedType": "fruit"
   },
   {
     "product": "Round Tomato Seeds",
@@ -48,7 +50,8 @@ export const items = [
     "id": 3,
     "src": "round-tomato-seeds.jpg",
     "seedPath": "round-tomato-seeds-seed.jpg",
-    "cart": false
+    "cart": false,
+    "seedType": "vegetable"
   },
   {
     "product": "Carrot Seeds",
@@ -65,7 +68,8 @@ export const items = [
     "id": 4,
     "src": "carrot-seeds.jpg",
     "seedPath": "carrot-seeds-seed.jpg",
-    "cart": false
+    "cart": false,
+    "seedType": "vegetable"
   },
   {
     "product": "Chili Long Green Seeds",
@@ -82,7 +86,8 @@ export const items = [
     "id": 5,
     "src": "chili-long-green-seeds.jpg",
     "seedPath": "chili-long-green-seeds-seed.jpg",
-    "cart": false
+    "cart": false,
+    "seedType": "vegetable"
   },
   {
     "product": "Capsicum Yellow Seeds",
@@ -99,7 +104,8 @@ export const items = [
     "id": 6,
     "src": "capsicum-yellow-seeds.jpg",
     "seedPath": "capsicum-yellows-seeds-seed.jpg",
-    "cart": false
+    "cart": false,
+    "seedType": "vegetable"
   },
   {
     "product": "Broccoli Seeds",
@@ -116,7 +122,8 @@ export const items = [
     "id": 7,
     "src": "broccoli-seeds.jpg",
     "seedPath": "broccoli-seeds-seed.jpg",
-    "cart": false
+    "cart": false,
+    "seedType": "vegetable"
   },
   {
     "product": "Brinjal Seeds",
@@ -133,7 +140,8 @@ export const items = [
     "id": 8,
     "src": "brinjal-seeds.jpg",
     "seedPath": "brinjal-seeds-seed.jpg",
-    "cart": false
+    "cart": false,
+    "seedType": "vegetable"
   },
   {
     "product": "Lotus Seeds",
@@ -150,7 +158,8 @@ export const items = [
     "id": 9,
     "src": "lotus-seeds.jpg",
     "seedPath": "lotus-seeds-seed.jpg",
-    "cart": false
+    "cart": false,
+    "seedType": "flower"
   },
   {
     "product": "Mint Seeds",
@@ -167,7 +176,8 @@ export const items = [
     "id": 10,
     "src": "mint-seeds.jpg",
     "seedPath": "mint-seeds-seed.jpg",
-    "cart": false
+    "cart": false,
+    "seedType": "vegetable"
   },
   {
     "product": "Zinnia Double Mix Seeds",
@@ -184,7 +194,8 @@ export const items = [
     "id": 11,
     "src": "zinnia-double-mix-seeds.jpg",
     "seedPath": "zinnia-double-mix-seeds-seed.jpg",
-    "cart": false
+    "cart": false,
+    "seedType": "flower"
   },
   {
     "product": "Lady Finger Seeds",
@@ -201,7 +212,8 @@ export const items = [
     "id": 12,
     "src": "lady-finger-seeds.jpg",
     "seedPath": "lady-finger-seeds-seed.jpg",
-    "cart": false
+    "cart": false,
+    "seedType": "flower"
   },
   {
     "product": "Beans Seeds",
@@ -218,7 +230,8 @@ export const items = [
     "id": 13,
     "src": "beans-seeds.jpg",
     "seedPath": "beans-seeds-seed.jpg",
-    "cart": false
+    "cart": false,
+    "seedType": "vegetable"
   },
   {
     "product": "Chrysanthemum Mixed Seeds",
@@ -235,6 +248,25 @@ export const items = [
     "id": 13,
     "src": "chrysanthemum-mixed-seeds.jpg",
     "seedPath": "chrysanthemum-mixed-seeds-seed.jpg",
-    "cart": false
+    "cart": false,
+    "seedType": "flower"
+  },
+  {
+    "product": "Petunia Mixed Seeds",
+    "seedsCount": "30",
+    "productDetails": "This packer contains more than 30 seeds of Petunia Mixed flower.",
+    "Sunlight": "Full Direct sunlight",
+    "Water": "2 times a week",
+    "TimeTillHarvest": "13 weeks",
+    "qty": 1,
+    "price": "₹20.00",
+    "discount": "₹5",
+    "coupon": "applied",
+    "totalAmount": "---",
+    "id": 13,
+    "src": "petunia-mixed-seeds.jpg",
+    "seedPath": "petunia-mixed-seeds-seed.jpg",
+    "cart": false,
+    "seedType": "flower"
   },
 ]
