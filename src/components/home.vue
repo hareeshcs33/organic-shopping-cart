@@ -1,10 +1,30 @@
 <template>
   <div class="container mb-5">
-    <div class="d-flex">
-      <a class="py-2 pr-2 link" @click="getSeedsFilter('all')">All Seeds</a>
-      <a class="p-2 link" @click="getSeedsFilter('flower')">Flower Seeds</a>
-      <a class="p-2 link" @click="getSeedsFilter('vegetable')">Vegetable Seeds</a>
-      <a class="p-2 link" @click="getSeedsFilter('fruit')">Fruit Seeds</a>
+    <div class="d-flex align-items-center justify-content-center">
+      <a
+        class="p-2 link"
+        @click="getSeedsFilter('all')"
+        :class="getActiveClass('all')"
+        ><i class="fas fa-home"></i>All Seeds</a
+      >
+      <a
+        class="p-2 link"
+        @click="getSeedsFilter('flower')"
+        :class="getActiveClass('flower')"
+        >Flower Seeds</a
+      >
+      <a
+        class="p-2 link"
+        @click="getSeedsFilter('vegetable')"
+        :class="getActiveClass('vegetable')"
+        >Vegetable Seeds</a
+      >
+      <a
+        class="p-2 link"
+        @click="getSeedsFilter('fruit')"
+        :class="getActiveClass('fruit')"
+        >Fruit Seeds</a
+      >
     </div>
     <div class="row">
       <card
@@ -39,7 +59,7 @@ export default {
   data() {
     return {
       seedType: "all",
-      filteredItems: [],
+      filteredItems: []
     };
   },
   computed: {
@@ -47,16 +67,23 @@ export default {
       return this.$store.state.items;
     }
   },
-  created(){
-    this.getSeedsFilter('all');
+  created() {
+    this.getSeedsFilter("all");
   },
   methods: {
-    getSeedsFilter(seedType){
-      if(this.seedType == seedType){
+    getSeedsFilter(seedType) {
+      if (this.seedType == seedType) {
         this.filteredItems = this.getItemLists;
-      }else {
-        this.filteredItems = this.getItemLists.filter(item => item.seedType == seedType);
+      } else {
+        this.filteredItems = this.getItemLists.filter(
+          item => item.seedType == seedType
+        );
       }
+      this.seedType = seedType;
+      console.log(this.seedType);
+    },
+    getActiveClass(val) {
+      return this.seedType == val ? "active" : "";
     }
   },
   components: {
@@ -64,3 +91,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+.link.active {
+  background-color: #b1bbff52;
+}
+</style>

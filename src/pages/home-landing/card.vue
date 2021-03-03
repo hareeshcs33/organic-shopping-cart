@@ -12,7 +12,11 @@
         class="d-flex flex-column align-items-center justify-content-between h-100"
       >
         <div class="img-box">
-          <img class="item-img" :src="'/static/img/' + item.src" />
+          <img
+            class="item-img"
+            :src="'/static/img/' + item.src"
+            @click.prevent="viewItem(item)"
+          />
         </div>
         <div class="py-3">
           <div>{{ item.product }}</div>

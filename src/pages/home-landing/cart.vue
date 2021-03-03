@@ -3,6 +3,9 @@
     <h3 v-if="!getEditCardStatus">Cart page</h3>
     <div class="mx-auto" v-if="getCartItems.length == 0 && !getEditCardStatus">
       <div class="empty-text text-center mb-3">Your Cart is empty!</div>
+      <div class="cart-icon-arrow-down">
+        <i class="fas fa-cart-arrow-down"></i>
+      </div>
       <div class="add-empty-text text-center mb-4">add items to it now.</div>
       <button class="btn btn-dark px-5 d-block mx-auto">
         <router-link to="/">shop now</router-link>
@@ -50,5 +53,10 @@ export default {
 }
 .add-empty-text {
   font-size: 14px;
+}
+.cart-icon-arrow-down {
+  color: #a3a3a3;
+  font-size: 80px;
+  text-align: center;
 }
 </style>

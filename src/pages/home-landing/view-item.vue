@@ -1,6 +1,7 @@
 <template>
   <div class="card mb-3">
     <div class="card-header">
+      <router-link to="/"><i class="fas fa-fast-backward"></i></router-link>
       <h5 class="text-center">{{ viewObj.product }}</h5>
     </div>
     <div class="card-body text-center">

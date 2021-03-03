@@ -2,11 +2,13 @@
   <div class="navbar">
     <ul class="nav">
       <router-link to="/" tag="li" active-class="active" exact
-        ><a>Home</a></router-link
+        ><a><i class="fas fa-home"></i>Home</a></router-link
       >
       <router-link to="/cart" tag="li" active-class="active"
         ><a
-          >Cart (<strong class="cart-count-text">{{ getCartCount }}</strong
+          ><i class="fas fa-cart-plus"></i> Cart (<strong
+            class="cart-count-text"
+            >{{ getCartCount }}</strong
           >)</a
         ></router-link
       >
