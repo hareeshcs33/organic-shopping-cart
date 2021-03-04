@@ -5,7 +5,7 @@
         class="p-2 link"
         @click="getSeedsFilter('all')"
         :class="getActiveClass('all')"
-        ><i class="fas fa-home"></i>All Seeds</a
+        ><i class="fas fa-store"></i> All Seeds</a
       >
       <a
         class="p-2 link"
@@ -99,6 +99,7 @@ export default {
 </script>
 <style scoped>
 .link.active {
+  color: #444;
   background-color: #b1bbff52;
 }
 </style>

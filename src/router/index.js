@@ -4,6 +4,7 @@ import Home from '@/components/home'
 import Cart from '../pages/home-landing/cart.vue';
 import EditItem from '../pages/home-landing/edit-item.vue';
 import ViewItem from '../pages/home-landing/view-item.vue';
+import Likes from '../pages/home-landing/likes.vue';
 
 Vue.use(Router)
 
@@ -33,6 +34,11 @@ export default new Router({
           })
         },
       ]
+    },
+    {
+      path: '/likes',
+      name: 'likes',
+      component: Likes,
     },
   ]
 })

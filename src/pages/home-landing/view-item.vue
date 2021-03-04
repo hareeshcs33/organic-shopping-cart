@@ -1,8 +1,10 @@
 <template>
   <div class="card mb-3">
-    <div class="card-header">
-      <router-link to="/"><i class="fas fa-fast-backward"></i></router-link>
-      <h5 class="text-center">{{ viewObj.product }}</h5>
+    <div class="card-header d-flex align-items-center justify-content-center">
+      <router-link to="/"
+        ><i class="fas fa-fast-backward backward-icon"></i
+      ></router-link>
+      <h5 class="text-center mb-0">{{ viewObj.product }}</h5>
     </div>
     <div class="card-body text-center">
       <div class="d-flex">
@@ -131,32 +133,15 @@
         </div>
       </div>
     </div>
-    <div class="offer-details" :class="showOffer ? 'show' : ''">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Quantity</th>
-            <th>Price per item</th>
-            <th>Discount</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2 items</td>
-            <td>₹20.00</td>
-            <td>₹5.00</td>
-          </tr>
-          <tr>
-            <td>5 items</td>
-            <td>₹20.00</td>
-            <td>₹10.00</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <offer-details
+      class="offer-details"
+      :class="showOffer ? 'show' : ''"
+    ></offer-details>
   </div>
 </template>
 <script>
+import OfferDetails from "./offer-details.vue";
+
 export default {
   data() {
     return {
@@ -223,6 +208,9 @@ export default {
         this.showOffer = false;
       }, 15000);
     }
+  },
+  components: {
+    OfferDetails
   }
 };
 </script>
@@ -250,12 +238,18 @@ export default {
   background-color: #fff;
   max-width: 350px;
   position: fixed;
-  top: 20%;
+  top: 21%;
   right: -350px;
   z-index: 1;
   transition: 1s;
+  border-right: 2px solid red;
 }
 .offer-details.show {
-  right: 2%;
+  right: 0;
+}
+.backward-icon {
+  position: absolute;
+  top: 25px;
+  left: 20px;
 }
 </style>

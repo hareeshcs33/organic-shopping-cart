@@ -12,6 +12,14 @@
           >)</a
         ></router-link
       >
+      <router-link to="/likes" tag="li" active-class="active"
+        ><a
+          ><i class="fas fa-heart"></i> Likes (<strong
+            class="cart-count-text"
+            >{{ getLikesItemsList }}</strong
+          >)</a
+        ></router-link
+      >
     </ul>
   </div>
 </template>
@@ -20,6 +28,9 @@ export default {
   computed: {
     getCartCount() {
       return this.$store.getters.getCartCount;
+    },
+    getLikesItemsList() {
+      return this.$store.getters.getLikesItemsList.length;
     }
   }
 };

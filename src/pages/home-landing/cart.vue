@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <h3 v-if="!getEditCardStatus">Cart page</h3>
+    <h3 v-if="!getEditCardStatus && getCartItems.length > 0">Cart page</h3>
     <div class="mx-auto" v-if="getCartItems.length == 0 && !getEditCardStatus">
       <div class="empty-text text-center mb-3">Your Cart is empty!</div>
       <div class="cart-icon-arrow-down">
         <i class="fas fa-cart-arrow-down"></i>
       </div>
       <div class="add-empty-text text-center mb-4">add items to it now.</div>
-      <button class="btn btn-dark px-5 d-block mx-auto">
+      <button class="btn btn-primary px-5 d-block mx-auto shop-link">
         <router-link to="/">shop now</router-link>
       </button>
     </div>
@@ -58,5 +58,8 @@ export default {
   color: #a3a3a3;
   font-size: 80px;
   text-align: center;
+}
+.shop-link a {
+  color: #fff;
 }
 </style>

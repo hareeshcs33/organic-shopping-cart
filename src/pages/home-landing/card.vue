@@ -111,6 +111,7 @@ export default {
     },
     likeItem(item) {
       item.like = !item.like;
+      this.$store.commit("likeItem", item);
     }
   }
 };

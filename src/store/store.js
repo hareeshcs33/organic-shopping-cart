@@ -23,6 +23,9 @@ export const store = new Vuex.Store({
     getCartItems(state, payload) {
       return state.cartItems;
     },
+    getLikesItemsList(state) {
+      return state.items.filter(item => item.like == true);
+    }
   },
   mutations: {
     increaseCount(state) {
@@ -47,7 +50,13 @@ export const store = new Vuex.Store({
     },
     viewItem(state, payload) {
       state.viewItem = state.items.filter(item => item.id == payload);;
-      // console.log(state.viewItem);
+    },
+    likeItem(state, payload) {
+      state.items.filter(item => {
+        if (item.id == payload.id) {
+          item.like = payload.like;
+        }
+      });
     }
   },
   actions: {
