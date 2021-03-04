@@ -79,7 +79,7 @@ export default {
   },
   methods: {
     getSeedsFilter(seedType) {
-      if (this.seedType == seedType) {
+      if (seedType == "all") {
         this.filteredItems = this.getItemLists;
       } else {
         this.filteredItems = this.getItemLists.filter(
@@ -87,7 +87,6 @@ export default {
         );
       }
       this.seedType = seedType;
-      console.log(this.seedType);
     },
     getActiveClass(val) {
       return this.seedType == val ? "active" : "";

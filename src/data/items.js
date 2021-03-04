@@ -103,7 +103,7 @@ export const items = [
     "totalAmount": "---",
     "id": 6,
     "src": "capsicum-yellow-seeds.jpg",
-    "seedPath": "capsicum-yellows-seeds-seed.jpg",
+    "seedPath": "capsicum-yellow-seeds-seed.jpg",
     "cart": false,
     "seedType": "vegetable"
   },
@@ -213,7 +213,7 @@ export const items = [
     "src": "lady-finger-seeds.jpg",
     "seedPath": "lady-finger-seeds-seed.jpg",
     "cart": false,
-    "seedType": "flower"
+    "seedType": "vegetable"
   },
   {
     "product": "Beans Seeds",
