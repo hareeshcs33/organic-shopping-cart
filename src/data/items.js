@@ -15,6 +15,7 @@ export const items = [
     "src": "cosmos-mixed-sensation-seeds.jpg",
     "seedPath": "cosmos-mixed-sensation-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "flower"
   },
   {
@@ -33,6 +34,7 @@ export const items = [
     "src": "strawberry-seeds.jpg",
     "seedPath": "strawberry-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "fruit"
   },
   {
@@ -51,6 +53,7 @@ export const items = [
     "src": "round-tomato-seeds.jpg",
     "seedPath": "round-tomato-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "vegetable"
   },
   {
@@ -69,6 +72,7 @@ export const items = [
     "src": "carrot-seeds.jpg",
     "seedPath": "carrot-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "vegetable"
   },
   {
@@ -87,6 +91,7 @@ export const items = [
     "src": "chili-long-green-seeds.jpg",
     "seedPath": "chili-long-green-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "vegetable"
   },
   {
@@ -105,6 +110,7 @@ export const items = [
     "src": "capsicum-yellow-seeds.jpg",
     "seedPath": "capsicum-yellow-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "vegetable"
   },
   {
@@ -123,6 +129,7 @@ export const items = [
     "src": "broccoli-seeds.jpg",
     "seedPath": "broccoli-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "vegetable"
   },
   {
@@ -141,6 +148,7 @@ export const items = [
     "src": "brinjal-seeds.jpg",
     "seedPath": "brinjal-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "vegetable"
   },
   {
@@ -159,6 +167,7 @@ export const items = [
     "src": "lotus-seeds.jpg",
     "seedPath": "lotus-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "flower"
   },
   {
@@ -177,6 +186,7 @@ export const items = [
     "src": "mint-seeds.jpg",
     "seedPath": "mint-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "vegetable"
   },
   {
@@ -195,6 +205,7 @@ export const items = [
     "src": "zinnia-double-mix-seeds.jpg",
     "seedPath": "zinnia-double-mix-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "flower"
   },
   {
@@ -213,6 +224,7 @@ export const items = [
     "src": "lady-finger-seeds.jpg",
     "seedPath": "lady-finger-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "vegetable"
   },
   {
@@ -231,6 +243,7 @@ export const items = [
     "src": "beans-seeds.jpg",
     "seedPath": "beans-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "vegetable"
   },
   {
@@ -249,6 +262,7 @@ export const items = [
     "src": "chrysanthemum-mixed-seeds.jpg",
     "seedPath": "chrysanthemum-mixed-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "flower"
   },
   {
@@ -267,6 +281,7 @@ export const items = [
     "src": "petunia-mixed-seeds.jpg",
     "seedPath": "petunia-mixed-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "flower"
   },
   {
@@ -285,6 +300,7 @@ export const items = [
     "src": "watermelon-seeds.jpg",
     "seedPath": "watermelon-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "fruit"
   },
   {
@@ -303,6 +319,7 @@ export const items = [
     "src": "papaya-seeds.jpg",
     "seedPath": "papaya-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "fruit"
   },
   {
@@ -321,6 +338,7 @@ export const items = [
     "src": "musk-melon-seeds.jpg",
     "seedPath": "musk-melon-seeds-seed.jpg",
     "cart": false,
+    "like": false,
     "seedType": "fruit"
   },
 ]

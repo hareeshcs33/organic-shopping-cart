@@ -12,6 +12,11 @@
         class="d-flex flex-column align-items-center justify-content-between h-100"
       >
         <div class="img-box">
+          <span class="like-label" @click="likeItem(item)">
+            <span v-show="item.like"><i class="fas fa-heart"></i></span>
+            <span v-show="!item.like"><i class="far fa-heart"></i></span>
+            Like
+          </span>
           <img
             class="item-img"
             :src="'/static/img/' + item.src"
@@ -67,6 +72,7 @@ export default {
       message: ""
     };
   },
+  computed: {},
   methods: {
     addToCart(item) {
       item.cart = true;
@@ -102,6 +108,9 @@ export default {
       this.$store.commit("viewItem", item.id);
       this.$router.push("/view-item");
       console.log("view Item");
+    },
+    likeItem(item) {
+      item.like = !item.like;
     }
   }
 };
