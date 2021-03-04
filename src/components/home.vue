@@ -29,7 +29,7 @@
     <div class="row">
       <template v-if="filteredItems.length > 0">
         <card
-          class="col-12 col-xs-6 col-sm-4 col-md-4 col-lg-3 text-center"
+          class="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center"
           v-for="(item, index) in filteredItems"
           :item="item"
           :key="index"

@@ -4,7 +4,7 @@
     <div class="row">
       <template v-if="getLikesItemsList.length > 0">
         <card
-          class="col-12 col-xs-6 col-sm-4 col-md-4 col-lg-3 text-center"
+          class="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center"
           v-for="(item, index) in getLikesItemsList"
           :item="item"
           :key="index"

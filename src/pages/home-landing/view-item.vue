@@ -7,7 +7,7 @@
       <h5 class="text-center mb-0">{{ viewObj.product }}</h5>
     </div>
     <div class="card-body text-center">
-      <div class="d-flex">
+      <div class="d-flex flex-column flex-md-row">
         <div
           class="d-flex flex-column align-items-center justify-content-between h-100 pr-3"
         >
@@ -226,6 +226,7 @@ export default {
   height: 320px;
   transition: 0.4s;
 }
+
 .item-details-table tbody tr td:first-child {
   white-space: nowrap;
 }
@@ -251,5 +252,22 @@ export default {
   position: absolute;
   top: 25px;
   left: 20px;
+}
+@media (max-width: 767px) {
+  .img-box {
+    min-width: 250px;
+    width: 250px;
+    height: 250px;
+  }
+  .item-img.item-img-view {
+    min-width: 250px;
+    width: 250px;
+    height: 250px;
+    transition: 0.4s;
+  }
+  .backward-icon {
+    position: static;
+    margin-right: 10px;
+  }
 }
 </style>

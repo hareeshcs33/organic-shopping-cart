@@ -11,14 +11,21 @@
         <router-link to="/">shop now</router-link>
       </button>
     </div>
-    <div class="row" v-if="!getEditCardStatus">
+    <div class="row" v-if="!getEditCardStatus && getCartItems.length > 0">
       <card
-        class="col-12 col-xs-6 col-sm-4 col-md-4 col-lg-3 text-center"
+        class="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center"
         v-for="(item, index) in getCartItems"
         :item="item"
         :key="index"
         :index="index"
       ></card>
+      <div
+        class="col-12 col-xs-6 col-md-4 col-lg-3 mb-3 card align-items-center justify-content-center"
+      >
+        <span @click="$router.push('/')"
+          ><i class="fas fa-plus plus-icon"></i
+        ></span>
+      </div>
     </div>
     <div v-else>
       <router-view></router-view>
@@ -61,5 +68,8 @@ export default {
 }
 .shop-link a {
   color: #fff;
+}
+.plus-icon {
+  font-size: 120px;
 }
 </style>

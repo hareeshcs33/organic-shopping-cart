@@ -86,7 +86,9 @@ export default {
       console.log(item);
       this.addRemoveCartText();
       this.$store.commit("removeFromCart", item.id);
-      this.$router.push("/");
+      if (this.$route.path != "/") {
+        this.$router.push("/");
+      }
     },
     addRemoveCartText() {
       this.message = this.item.cart
