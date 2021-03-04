@@ -27,13 +27,20 @@
       >
     </div>
     <div class="row">
-      <card
-        class="col-12 col-xs-6 col-sm-4 col-md-4 col-lg-3 text-center"
-        v-for="(item, index) in filteredItems"
-        :item="item"
-        :key="index"
-        :index="index"
-      ></card>
+      <template v-if="filteredItems.length > 0">
+        <card
+          class="col-12 col-xs-6 col-sm-4 col-md-4 col-lg-3 text-center"
+          v-for="(item, index) in filteredItems"
+          :item="item"
+          :key="index"
+          :index="index"
+        ></card>
+      </template>
+      <div class="col-12" v-else>
+        <div class="fa-3x text-center">
+          <i class="fas fa-spinner fa-spin"></i>
+        </div>
+      </div>
     </div>
     <div class="d-flex align-items-center justify-content-center flex-column">
       <div class="m-3">1 - 10 of {{ getItemLists.length }} items</div>
