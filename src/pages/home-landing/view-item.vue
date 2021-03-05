@@ -58,7 +58,7 @@
             </div>
           </div>
         </div>
-        <div class="d-flex">
+        <div class="d-flex justify-content-center">
           <div class="text-left">
             <table class="table w-100 table-responsive item-details-table">
               <tbody>

@@ -16,7 +16,7 @@ export const items = [
     "seedPath": "cosmos-mixed-sensation-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "flower"
+    "category": "flower"
   },
   {
     "product": "Strawberry Seeds",
@@ -35,7 +35,7 @@ export const items = [
     "seedPath": "strawberry-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "fruit"
+    "category": "fruit"
   },
   {
     "product": "Round Tomato Seeds",
@@ -54,7 +54,7 @@ export const items = [
     "seedPath": "round-tomato-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "vegetable"
+    "category": "vegetable"
   },
   {
     "product": "Carrot Seeds",
@@ -73,7 +73,7 @@ export const items = [
     "seedPath": "carrot-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "vegetable"
+    "category": "vegetable"
   },
   {
     "product": "Chili Long Green Seeds",
@@ -92,7 +92,7 @@ export const items = [
     "seedPath": "chili-long-green-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "vegetable"
+    "category": "vegetable"
   },
   {
     "product": "Capsicum Yellow Seeds",
@@ -111,7 +111,7 @@ export const items = [
     "seedPath": "capsicum-yellow-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "vegetable"
+    "category": "vegetable"
   },
   {
     "product": "Broccoli Seeds",
@@ -130,7 +130,7 @@ export const items = [
     "seedPath": "broccoli-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "vegetable"
+    "category": "vegetable"
   },
   {
     "product": "Brinjal Seeds",
@@ -149,7 +149,7 @@ export const items = [
     "seedPath": "brinjal-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "vegetable"
+    "category": "vegetable"
   },
   {
     "product": "Lotus Seeds",
@@ -157,7 +157,7 @@ export const items = [
     "productDetails": "This packet contains 3 seeds of Pink Lotus plant.",
     "Sunlight": "Sunny spot",
     "Water": "water tight container",
-    "TimeTillHarvest": "1--",
+    "TimeTillHarvest": "---",
     "qty": 1,
     "price": "₹20.00",
     "discount": "₹5",
@@ -168,7 +168,7 @@ export const items = [
     "seedPath": "lotus-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "flower"
+    "category": "flower"
   },
   {
     "product": "Mint Seeds",
@@ -187,7 +187,7 @@ export const items = [
     "seedPath": "mint-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "vegetable"
+    "category": "vegetable"
   },
   {
     "product": "Zinnia Double Mix Seeds",
@@ -206,7 +206,7 @@ export const items = [
     "seedPath": "zinnia-double-mix-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "flower"
+    "category": "flower"
   },
   {
     "product": "Lady Finger Seeds",
@@ -225,7 +225,7 @@ export const items = [
     "seedPath": "lady-finger-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "vegetable"
+    "category": "vegetable"
   },
   {
     "product": "Beans Seeds",
@@ -244,7 +244,7 @@ export const items = [
     "seedPath": "beans-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "vegetable"
+    "category": "vegetable"
   },
   {
     "product": "Chrysanthemum Mixed Seeds",
@@ -263,7 +263,7 @@ export const items = [
     "seedPath": "chrysanthemum-mixed-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "flower"
+    "category": "flower"
   },
   {
     "product": "Petunia Mixed Seeds",
@@ -282,7 +282,7 @@ export const items = [
     "seedPath": "petunia-mixed-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "flower"
+    "category": "flower"
   },
   {
     "product": "Watermelon Seeds",
@@ -301,7 +301,7 @@ export const items = [
     "seedPath": "watermelon-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "fruit"
+    "category": "fruit"
   },
   {
     "product": "Papaya Seeds",
@@ -320,7 +320,7 @@ export const items = [
     "seedPath": "papaya-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "fruit"
+    "category": "fruit"
   },
   {
     "product": "Musk Melon Seeds",
@@ -339,7 +339,7 @@ export const items = [
     "seedPath": "musk-melon-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "fruit"
+    "category": "fruit"
   },
   {
     "product": "Bitter Gourd Seeds",
@@ -358,6 +358,25 @@ export const items = [
     "seedPath": "bitter-gourd-seeds-seed.jpg",
     "cart": false,
     "like": false,
-    "seedType": "vegetable"
+    "category": "vegetable"
+  },
+  {
+    "product": "Cauliflower Seeds",
+    "seedsCount": "10",
+    "productDetails": "This packet contains more than 10 seeds of Cauliflower.",
+    "Sunlight": "Full sunlight",
+    "Water": "Water everyday",
+    "TimeTillHarvest": "13 weeks",
+    "qty": 1,
+    "price": "₹20.00",
+    "discount": "₹5",
+    "coupon": "---",
+    "totalAmount": "---",
+    "id": 20,
+    "src": "cauliflower-seeds.jpg",
+    "seedPath": "cauliflower-seeds-seed.jpg",
+    "cart": false,
+    "like": false,
+    "category": "vegetable"
   },
 ]

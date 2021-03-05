@@ -22,7 +22,7 @@
       <div
         class="col-12 col-xs-6 col-md-4 col-lg-3 mb-3 card align-items-center justify-content-center"
       >
-        <span @click="$router.push('/')"
+        <span @click="$router.push('/')" title="add more"
           ><i class="fas fa-plus plus-icon"></i
         ></span>
       </div>
@@ -70,6 +70,11 @@ export default {
   color: #fff;
 }
 .plus-icon {
+  color: #ccc;
   font-size: 120px;
+  transition: 0.2s;
+}
+.plus-icon:hover {
+  color: #a3a3a3;
 }
 </style>

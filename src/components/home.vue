@@ -2,25 +2,25 @@
   <div class="container mb-5">
     <div class="d-flex align-items-center justify-content-center">
       <a
-        class="p-2 link"
+        class="p-2 link text-center"
         @click="getSeedsFilter('all')"
         :class="getActiveClass('all')"
         ><i class="fas fa-store"></i> All Seeds</a
       >
       <a
-        class="p-2 link"
+        class="p-2 link text-center"
         @click="getSeedsFilter('flower')"
         :class="getActiveClass('flower')"
         >Flower Seeds</a
       >
       <a
-        class="p-2 link"
+        class="p-2 link text-center"
         @click="getSeedsFilter('vegetable')"
         :class="getActiveClass('vegetable')"
         >Vegetable Seeds</a
       >
       <a
-        class="p-2 link"
+        class="p-2 link text-center"
         @click="getSeedsFilter('fruit')"
         :class="getActiveClass('fruit')"
         >Fruit Seeds</a
@@ -65,7 +65,7 @@ export default {
   name: "home",
   data() {
     return {
-      seedType: "all",
+      category: "all",
       filteredItems: []
     };
   },
@@ -78,18 +78,18 @@ export default {
     this.getSeedsFilter("all");
   },
   methods: {
-    getSeedsFilter(seedType) {
-      if (seedType == "all") {
+    getSeedsFilter(category) {
+      if (category == "all") {
         this.filteredItems = this.getItemLists;
       } else {
         this.filteredItems = this.getItemLists.filter(
-          item => item.seedType == seedType
+          item => item.category == category
         );
       }
-      this.seedType = seedType;
+      this.category = category;
     },
     getActiveClass(val) {
-      return this.seedType == val ? "active" : "";
+      return this.category == val ? "active" : "";
     }
   },
   components: {
