@@ -1,144 +1,148 @@
 <template>
-  <div class="card mb-3">
-    <div class="card-header d-flex align-items-center justify-content-center">
-      <router-link to="/"
-        ><i class="fas fa-fast-backward backward-icon"></i
-      ></router-link>
-      <h5 class="text-center mb-0">{{ viewObj.product }}</h5>
-    </div>
-    <div class="card-body text-center">
-      <div class="d-flex flex-column flex-md-row">
-        <div
-          class="d-flex flex-column align-items-center justify-content-between h-100 pr-3"
-        >
-          <div class="img-box">
-            <img
-              class="item-img item-img-view"
-              :src="'/static/img/' + viewObj.src"
-            />
-          </div>
-          <div class="d-flex my-2">
-            <div class="small-img-box mr-2">
+  <div class="container">
+    <div class="card mb-3">
+      <div class="card-header d-flex align-items-center justify-content-center">
+        <router-link to="/"
+          ><i class="fas fa-fast-backward backward-icon"></i
+        ></router-link>
+        <h5 class="text-center mb-0">{{ viewObj.product }}</h5>
+      </div>
+      <div class="card-body text-center">
+        <div class="d-flex flex-column flex-md-row">
+          <div
+            class="d-flex flex-column align-items-center justify-content-between h-100 pr-3"
+          >
+            <div class="img-box">
               <img
-                class="small-item-img-view"
-                :src="'/static/img/' + viewObj.seedPath"
-              />
-            </div>
-            <div class="small-img-box">
-              <img
-                class="small-item-img-view"
+                class="item-img item-img-view"
                 :src="'/static/img/' + viewObj.src"
               />
             </div>
-          </div>
-          <div class="d-flex align-items-center cta-wrapper">
-            <div class="d-flex flex-column">
-              <button
-                class="btn btn-info btn-md px-5 mb-1"
-                @click="addToCart(viewObj)"
-                v-if="!viewObj.cart"
-              >
-                Add Cart
-              </button>
-              <button
-                class="btn btn-info btn-md px-5 mb-1"
-                @click="removeFromCart(viewObj)"
-                v-else
-              >
-                Remove Cart
-              </button>
-              <button
-                class="btn btn-info btn-md px-5 mb-1"
-                @click="editCard(viewObj)"
-                v-if="viewObj.cart"
-              >
-                Edit Item
-              </button>
-              <p class="mb-0 cart-notify-text">{{ message }}</p>
+            <div class="d-flex my-2">
+              <div class="small-img-box mr-2">
+                <img
+                  class="small-item-img-view"
+                  :src="'/static/img/' + viewObj.seedPath"
+                />
+              </div>
+              <div class="small-img-box">
+                <img
+                  class="small-item-img-view"
+                  :src="'/static/img/' + viewObj.src"
+                />
+              </div>
+            </div>
+            <div class="d-flex align-items-center cta-wrapper">
+              <div class="d-flex flex-column">
+                <button
+                  class="btn btn-info btn-md px-5 mb-1"
+                  @click="addToCart(viewObj)"
+                  v-if="!viewObj.cart"
+                >
+                  Add Cart
+                </button>
+                <button
+                  class="btn btn-info btn-md px-5 mb-1"
+                  @click="removeFromCart(viewObj)"
+                  v-else
+                >
+                  Remove Cart
+                </button>
+                <button
+                  class="btn btn-info btn-md px-5 mb-1"
+                  @click="editCard(viewObj)"
+                  v-if="viewObj.cart"
+                >
+                  Edit Item
+                </button>
+                <p class="mb-0 cart-notify-text">{{ message }}</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="d-flex justify-content-center">
-          <div class="text-left">
-            <table class="table w-100 table-responsive item-details-table">
-              <tbody>
-                <tr>
-                  <td colspan="2">
-                    <h5>{{ viewObj.product }}</h5>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Seed Count:</td>
-                  <td>{{ viewObj.seedsCount }} Seeds</td>
-                </tr>
-                <tr>
-                  <td>Product Details:</td>
-                  <td>{{ viewObj.productDetails }}</td>
-                </tr>
-                <tr>
-                  <td>Sunlight:</td>
-                  <td>{{ viewObj.Sunlight }}</td>
-                </tr>
-                <tr>
-                  <td>Time Till Harvest:</td>
-                  <td>{{ viewObj.TimeTillHarvest }}</td>
-                </tr>
-                <tr>
-                  <td>Qty:</td>
-                  <td>
-                    <select v-model="viewObj.qty">
-                      <option v-for="num in 20" :key="num">{{ num }}</option>
-                    </select>
-                    <span v-if="viewObj.qty == 1"
-                      >Buy more, save more,
-                      <a
-                        class="link"
-                        title="see offer details"
-                        @click="showOfferDetails"
+          <div class="d-flex justify-content-center">
+            <div class="text-left">
+              <table class="table w-100 table-responsive item-details-table">
+                <tbody>
+                  <tr>
+                    <td colspan="2">
+                      <h5>{{ viewObj.product }}</h5>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Seed Count:</td>
+                    <td>{{ viewObj.seedsCount }} Seeds</td>
+                  </tr>
+                  <tr>
+                    <td>Product Details:</td>
+                    <td>{{ viewObj.productDetails }}</td>
+                  </tr>
+                  <tr>
+                    <td>Sunlight:</td>
+                    <td>{{ viewObj.Sunlight }}</td>
+                  </tr>
+                  <tr>
+                    <td>Time Till Harvest:</td>
+                    <td>{{ viewObj.TimeTillHarvest }}</td>
+                  </tr>
+                  <tr>
+                    <td>Qty:</td>
+                    <td>
+                      <select v-model="viewObj.qty">
+                        <option v-for="num in 20" :key="num">{{ num }}</option>
+                      </select>
+                      <span v-if="viewObj.qty == 1"
+                        >Buy more, save more,
+                        <a
+                          class="link"
+                          title="see offer details"
+                          @click="showOfferDetails"
+                        >
+                          Offers</a
+                        ></span
                       >
-                        Offers</a
-                      ></span
-                    >
-                  </td>
-                </tr>
-                <tr v-if="viewObj.qty > 1">
-                  <td>discount:</td>
-                  <td>{{ viewObj.discount }}</td>
-                </tr>
-                <tr>
-                  <td>Price:</td>
-                  <td>{{ viewObj.price }}</td>
-                </tr>
-                <tr>
-                  <td>Total Price:</td>
-                  <td>
-                    <span v-if="viewObj.qty == 1">₹{{ actualPriceValue }}</span>
-                    <span v-if="viewObj.qty > 1">₹{{ priceValue }}</span>
-                    <span v-if="viewObj.qty > 1" class="actual-price-value"
-                      >₹{{ actualPriceValue }}</span
-                    >
-                    <!-- <i class="fas fa-rupee-sign"></i> -->
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <!-- <button
+                    </td>
+                  </tr>
+                  <tr v-if="viewObj.qty > 1">
+                    <td>discount:</td>
+                    <td>{{ viewObj.discount }}</td>
+                  </tr>
+                  <tr>
+                    <td>Price:</td>
+                    <td>{{ viewObj.price }}</td>
+                  </tr>
+                  <tr>
+                    <td>Total Price:</td>
+                    <td>
+                      <span v-if="viewObj.qty == 1"
+                        >₹{{ actualPriceValue }}</span
+                      >
+                      <span v-if="viewObj.qty > 1">₹{{ priceValue }}</span>
+                      <span v-if="viewObj.qty > 1" class="actual-price-value"
+                        >₹{{ actualPriceValue }}</span
+                      >
+                      <!-- <i class="fas fa-rupee-sign"></i> -->
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- <button
               class="btn btn-info btn-md px-5 mb-1"
               @click="addToCart(viewObj)"
               v-if="!viewObj.cart"
             >
               Add Cart
             </button> -->
+            </div>
           </div>
         </div>
       </div>
+      <offer-details
+        class="offer-details"
+        :class="showOffer ? 'show' : ''"
+        :showOffer="showOffer"
+        @closeOffer="closeOffer"
+      ></offer-details>
     </div>
-    <offer-details
-      class="offer-details"
-      :class="showOffer ? 'show' : ''"
-      :showOffer="showOffer"
-      @closeOffer="closeOffer"
-    ></offer-details>
   </div>
 </template>
 <script>
@@ -236,9 +240,9 @@ export default {
   white-space: nowrap;
 }
 .actual-price-value {
+  color: #a3a3a3;
   text-decoration: line-through;
   padding-left: 5px;
-  color: #a3a3a3;
 }
 .offer-details {
   background-color: #fff;

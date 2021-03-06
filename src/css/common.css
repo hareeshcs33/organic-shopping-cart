@@ -246,14 +246,12 @@ ul {
 }
 
 .cart-notify-text {
-  color: rgb(228, 111, 198);
+  color: green;
+  font-weight: 600;
 }
 
 .close-icon {
   color: #ccc;
-  /* position: absolute; */
-  top: 0;
-  right: 20px;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;

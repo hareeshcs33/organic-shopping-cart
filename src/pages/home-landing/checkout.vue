@@ -43,20 +43,36 @@
                 class="d-flex align-items-center justify-content-between mb-3"
               >
                 <span>Subtotal</span>
-                <span>₹60.00</span>
+                <span
+                  :class="
+                    this.getSubtotal > this.minOrder ? 'green-text' : 'red-text'
+                  "
+                  >₹ {{ getSubtotal }}</span
+                >
               </div>
               <div
                 class="d-flex align-items-center justify-content-between mb-3"
               >
                 <span>Shipping or delivery</span>
-                <span>₹99.00</span>
+                <span :class="!shippingChargeStatus ? 'text-strike' : ''"
+                  >₹99.00</span
+                >
               </div>
               <div
                 class="d-flex align-items-center justify-content-between total-text"
               >
                 <span>TOTAL</span>
-                <span>₹159.00</span>
+                <div class="d-flex flex-column">
+                  <span>Total: ₹{{ totalAmount }}</span>
+                </div>
               </div>
+              <div>Free Shipping above Rs 149.99 order</div>
+              <a
+                class="link"
+                @click="$router.push('/')"
+                v-if="this.getSubtotal < this.minOrder"
+                >order more</a
+              >
             </div>
           </div>
           <div class="p-3">
@@ -149,12 +165,33 @@
 export default {
   data() {
     return {
-      coupon: false
+      coupon: false,
+      shippingCharge: 99,
+      shippingChargeStatus: Boolean,
+      minOrder: 149.99
     };
   },
   computed: {
     cartItemsToCheckout() {
       return this.$store.getters.getCartItems;
+    },
+    getSubtotal() {
+      return this.$store.getters.getCartItems
+        .map(item => parseInt(item.price.slice(1, 3)))
+        .reduce((price, totalPrice) => (totalPrice += price))
+        .toFixed(2);
+    },
+    getSubtotaltWithShipping() {
+      return (parseInt(this.getSubtotal) + this.shippingCharge).toFixed(2);
+    },
+    totalAmount() {
+      if (this.getSubtotal > this.minOrder) {
+        this.shippingChargeStatus = false;
+        return this.getSubtotal;
+      } else {
+        this.shippingChargeStatus = true;
+        return this.getSubtotaltWithShipping;
+      }
     }
   },
   methods: {
@@ -215,5 +252,17 @@ ul {
   color: #ccc;
   font-size: 13px;
   cursor: not-allowed;
+}
+.text-strike {
+  color: #ccc;
+  font-weight: normal;
+  text-decoration: line-through;
+  padding-left: 5px;
+}
+.green-text {
+  color: green;
+}
+.red-text {
+  color: red;
 }
 </style>
