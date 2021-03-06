@@ -3,7 +3,10 @@
     <div>
       checkout page
     </div>
-    <div class="checkout-list-wrapper">
+    <div
+      class="d-flex flex-column flex-md-row"
+      v-if="cartItemsToCheckout.length > 0"
+    >
       <ul class="checkout-list">
         <li
           v-for="item in cartItemsToCheckout"
@@ -22,7 +25,9 @@
                 class="d-flex align-items-center justify-content-between mb-3"
               >
                 <span>{{ item.product }}</span>
-                <span class="close-icon ">&times;</span>
+                <span class="close-icon" @click="removeItemFromCart(item)"
+                  >&times;</span
+                >
               </div>
               <div class="d-flex align-items-center justify-content-between">
                 <span>Qty: {{ item.qty }}</span>
@@ -33,7 +38,7 @@
         </li>
         <li class="d-flex flex-column bg-white">
           <div class="p-3 d-flex w-100">
-            <div class="pl-3 w-100">
+            <div class="w-100">
               <div
                 class="d-flex align-items-center justify-content-between mb-3"
               >
@@ -55,12 +60,12 @@
             </div>
           </div>
           <div class="p-3">
-            <div class="p-3 w-100" v-if="!coupon" @click="couponOrGift">
+            <div class="pb-3 w-100" v-if="!coupon" @click="couponOrGift">
               <div>Have a promo coupon or gift card?</div>
               <a class="link">Redeem your code</a>
             </div>
             <div v-else>
-              <div class="p-3 w-100">
+              <div class="pb-3 w-100">
                 <div class="d-flex">
                   <input
                     type="text"
@@ -96,9 +101,43 @@
                 </div>
               </div>
             </div>
-            <div class="p-3 w-100">
+            <div class="pb-3 w-100">
               <div>Looking for more?</div>
               <router-link to="/">Continue shopping</router-link>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul class="ml-0 ml-md-4 bg-white">
+        <li>
+          <div class="p-3">
+            <h2>Checkout</h2>
+            <p>
+              Enter your email address. This address will be used to send you
+              order status updates.
+            </p>
+            <div class="mb-3">
+              <input
+                type="text"
+                placeholder="Your Email Address"
+                class="form-control"
+                :disabled="false"
+              />
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <input type="checkbox" checked :disabled="false" />
+              <label class="pl-2 mb-0"
+                >Keep me up to date on news and exclusive offers</label
+              >
+            </div>
+            <div class="d-flex align-items-center">
+              <button class="btn btn-primary px-5 mr-3">Checkout</button>
+              <div class="d-flex align-items-center encrypted-text">
+                <i class="fas fa-lock"></i>
+                <span class="ml-2">
+                  All data is transmitted encrypted via a secure TLS connection
+                </span>
+              </div>
             </div>
           </div>
         </li>
@@ -120,12 +159,19 @@ export default {
   },
   methods: {
     couponOrGift() {
-      console.log("couponOrGift");
       this.coupon = true;
+      console.log("couponOrGift");
     },
     couponCheck() {
-      console.log("couponCheck");
       this.coupon = false;
+      console.log("couponCheck");
+    },
+    removeItemFromCart(item) {
+      item.cart = false;
+      this.$store.commit("removeFromCart", item.id);
+      if (this.cartItemsToCheckout.length == 0) {
+        this.$router.push("/cart");
+      }
     }
   },
   directives: {
@@ -138,14 +184,12 @@ export default {
 };
 </script>
 <style scoped>
-.checkout-list-wrapper {
-  display: flex;
-}
 .checkout-list {
   display: flex;
   flex-direction: column;
   max-width: 450px;
   width: 100%;
+  list-style: none;
 }
 .checkout-list li {
   border-bottom: 1px solid #999;
@@ -163,5 +207,13 @@ export default {
   display: inline-block;
   width: 120px;
   margin: 0 0 10px 10px;
+}
+ul {
+  list-style: none;
+}
+.encrypted-text {
+  color: #ccc;
+  font-size: 13px;
+  cursor: not-allowed;
 }
 </style>
