@@ -51,7 +51,11 @@
         <button class="btn btn-primary btn-sm px-3 mx-3" :disabled="true">
           2
         </button>
-        <button class="btn btn-primary btn-sm px-3" :disabled="true">
+        <button
+          class="btn btn-primary btn-sm px-3"
+          :disabled="false"
+          @click="moreItems"
+        >
           NEXT >>>
         </button>
       </div>
@@ -66,7 +70,8 @@ export default {
   data() {
     return {
       category: "all",
-      filteredItems: []
+      filteredItems: [],
+      count: 0
     };
   },
   computed: {
@@ -90,6 +95,10 @@ export default {
     },
     getActiveClass(val) {
       return this.category == val ? "active" : "";
+    },
+    moreItems() {
+      this.count += 4;
+      console.log("show more items", this.count);
     }
   },
   components: {

@@ -244,3 +244,21 @@ ul {
 .item {
   border-bottom: 1px solid #454545;
 }
+
+.cart-notify-text {
+  color: rgb(228, 111, 198);
+}
+
+.close-icon {
+  color: #ccc;
+  /* position: absolute; */
+  top: 0;
+  right: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-icon:hover {
+  color: #454545;
+}

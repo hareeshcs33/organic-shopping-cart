@@ -45,7 +45,7 @@
                 @click="removeFromCart(viewObj)"
                 v-else
               >
-                Remove From Cart
+                Remove Cart
               </button>
               <button
                 class="btn btn-info btn-md px-5 mb-1"
@@ -54,7 +54,7 @@
               >
                 Edit Item
               </button>
-              <p class="mb-0">{{ message }}</p>
+              <p class="mb-0 cart-notify-text">{{ message }}</p>
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@
                 </tr>
                 <tr>
                   <td>Seed Count:</td>
-                  <td>{{ viewObj.seedsCount }}</td>
+                  <td>{{ viewObj.seedsCount }} Seeds</td>
                 </tr>
                 <tr>
                   <td>Product Details:</td>
@@ -136,6 +136,8 @@
     <offer-details
       class="offer-details"
       :class="showOffer ? 'show' : ''"
+      :showOffer="showOffer"
+      @closeOffer="closeOffer"
     ></offer-details>
   </div>
 </template>
@@ -207,6 +209,9 @@ export default {
       setTimeout(() => {
         this.showOffer = false;
       }, 15000);
+    },
+    closeOffer() {
+      this.showOffer = false;
     }
   },
   components: {

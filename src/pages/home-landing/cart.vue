@@ -22,9 +22,21 @@
       <div
         class="col-12 col-xs-6 col-md-4 col-lg-3 mb-3 card align-items-center justify-content-center"
       >
-        <span @click="$router.push('/')" title="add more"
+        <span @click="$router.push('/')" title="add more" class="p-5"
           ><i class="fas fa-plus plus-icon"></i
         ></span>
+      </div>
+      <div class="col-12 jumbotron">
+        <div class="card">
+          <div>
+            <button
+              class="btn btn-success d-block ml-auto"
+              @click="goToCheckout"
+            >
+              go to checkout
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <div v-else>
@@ -44,6 +56,12 @@ export default {
     },
     getEditCardStatus() {
       return this.$store.state.editItem;
+    }
+  },
+  methods: {
+    goToCheckout() {
+      console.log("goToCheckout");
+      this.$router.push("/checkout");
     }
   },
   mounted() {

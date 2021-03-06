@@ -29,6 +29,7 @@
         </div>
         <div class="d-flex align-items-center cta-wrapper">
           <div class="d-flex flex-column">
+            <p class="mb-1 cart-notify-text">{{ message }}</p>
             <button
               class="btn btn-info btn-md px-5 mb-1"
               @click="addToCart(item)"
@@ -41,7 +42,7 @@
               @click="removeFromCart(item)"
               v-else
             >
-              Remove From Cart
+              Remove Cart
             </button>
             <button
               class="btn btn-info btn-md px-5 mb-1"
@@ -50,7 +51,6 @@
             >
               Edit Item
             </button>
-            <p class="mb-0">{{ message }}</p>
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@ export default {
       console.log(item);
       this.addRemoveCartText();
       this.$store.commit("addToCart", item.id);
-      this.$router.push("/cart");
+      // this.$router.push("/cart");
     },
     removeFromCart(item) {
       item.cart = false;
