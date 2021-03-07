@@ -1,6 +1,6 @@
 <template>
   <div class="container mb-5">
-    <div class="d-flex align-items-center justify-content-center">
+    <div class="d-flex align-items-center justify-content-center mb-3">
       <a
         class="p-2 link text-center"
         @click="getSeedsFilter('all')"
