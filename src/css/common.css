@@ -260,3 +260,10 @@ ul {
 .close-icon:hover {
   color: #454545;
 }
+
+
+@media (max-width: 767px){
+  .navbar ul li a {
+    font-size: 14px;
+  }
+}

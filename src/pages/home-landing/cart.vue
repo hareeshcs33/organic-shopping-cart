@@ -11,7 +11,16 @@
         <router-link to="/">shop now</router-link>
       </button>
     </div>
-    <div class="row" v-if="!getEditCardStatus && getCartItems.length > 0">
+    <div
+      class="row position-relative"
+      v-if="!getEditCardStatus && getCartItems.length > 0"
+    >
+      <button
+        class="btn btn-success d-block ml-auto checkout-cta"
+        @click="goToCheckout"
+      >
+        go to checkout
+      </button>
       <card
         class="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center"
         v-for="(item, index) in getCartItems"
@@ -25,18 +34,6 @@
         <span @click="$router.push('/')" title="add more" class="p-5"
           ><i class="fas fa-plus plus-icon"></i
         ></span>
-      </div>
-      <div class="col-12 jumbotron">
-        <div class="card">
-          <div>
-            <button
-              class="btn btn-success d-block ml-auto"
-              @click="goToCheckout"
-            >
-              go to checkout
-            </button>
-          </div>
-        </div>
       </div>
     </div>
     <div v-else>
@@ -94,5 +91,11 @@ export default {
 }
 .plus-icon:hover {
   color: #a3a3a3;
+}
+.checkout-cta {
+  position: absolute;
+  top: -50px;
+  right: 0px;
+  margin-right: 15px;
 }
 </style>
