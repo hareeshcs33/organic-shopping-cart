@@ -150,16 +150,26 @@
                 placeholder="Your Email Address"
                 class="form-control"
                 :disabled="false"
+                v-model="emailAddress"
               />
             </div>
             <div class="d-flex align-items-center mb-3">
-              <input type="checkbox" checked :disabled="false" />
+              <input
+                type="checkbox"
+                :checked="this.emailAddress !== ''"
+                :disabled="this.emailAddress == ''"
+              />
               <label class="pl-2 mb-0"
                 >Keep me up to date on news and exclusive offers</label
               >
             </div>
             <div class="d-flex align-items-center mb-3">
-              <button class="btn btn-primary px-5 mr-3">Checkout</button>
+              <button
+                class="btn btn-primary px-5 mr-3"
+                :disabled="this.emailAddress == ''"
+              >
+                Checkout
+              </button>
               <div class="d-flex align-items-center encrypted-text">
                 <i class="fas fa-lock"></i>
                 <span class="ml-2">
@@ -181,7 +191,8 @@ export default {
       shippingCharge: 99,
       shippingChargeStatus: Boolean,
       minOrder: 149.99,
-      qtyPrice: null
+      qtyPrice: null,
+      emailAddress: ""
     };
   },
   computed: {
