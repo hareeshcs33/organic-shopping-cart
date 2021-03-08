@@ -1,30 +1,34 @@
 <template>
   <div class="container mb-5">
     <div class="d-flex align-items-center justify-content-center mb-3">
-      <a
-        class="p-2 link text-center"
+      <div
+        class="p-2 link text-center filter-link"
         @click="getSeedsFilter('all')"
         :class="getActiveClass('all')"
-        ><i class="fas fa-store"></i> All Seeds</a
       >
-      <a
-        class="p-2 link text-center"
+        <i class="fas fa-store"></i> All Seeds
+      </div>
+      <div
+        class="p-2 link text-center filter-link"
         @click="getSeedsFilter('flower')"
         :class="getActiveClass('flower')"
-        >Flower Seeds</a
       >
-      <a
-        class="p-2 link text-center"
+        Flower Seeds
+      </div>
+      <div
+        class="p-2 link text-center filter-link"
         @click="getSeedsFilter('vegetable')"
         :class="getActiveClass('vegetable')"
-        >Vegetable Seeds</a
       >
-      <a
-        class="p-2 link text-center"
+        Vegetable Seeds
+      </div>
+      <div
+        class="p-2 link text-center filter-link"
         @click="getSeedsFilter('fruit')"
         :class="getActiveClass('fruit')"
-        >Fruit Seeds</a
       >
+        Fruit Seeds
+      </div>
     </div>
     <div class="row">
       <template v-if="filteredItems.length > 0">
@@ -107,8 +111,20 @@ export default {
 };
 </script>
 <style scoped>
-.link.active {
-  color: #444;
+.filter-link {
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  margin-right: 3px;
+}
+.filter-link:hover {
+  color: blue;
   background-color: #b1bbff52;
+  border-bottom: 3px solid blue;
+  transition: 0.4s;
+}
+.filter-link.active {
+  color: blue;
+  background-color: #b1bbff52;
+  border-bottom: 3px solid blue;
 }
 </style>

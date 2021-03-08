@@ -1,6 +1,6 @@
 <template>
   <div class="navbar">
-    <ul class="nav">
+    <ul class="nav main-nav-block">
       <router-link to="/" tag="li" active-class="active" exact
         ><a><i class="fas fa-home"></i>Home</a></router-link
       >
@@ -35,3 +35,23 @@ export default {
   }
 };
 </script>
+<style scoped>
+.main-nav-block li {
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  margin-right: 3px;
+}
+.main-nav-block li:hover {
+  background-color: #b1bbff52;
+  border-bottom: 3px solid blue;
+  transition: 0.4s;
+}
+.main-nav-block li:hover a {
+  color: blue;
+}
+.main-nav-block li.active {
+  color: blue;
+  background-color: #b1bbff52;
+  border-bottom: 3px solid blue;
+}
+</style>
