@@ -1,8 +1,13 @@
 <template>
   <div class="container">
     <h3 v-if="!getEditCardStatus && getCartItems.length > 0">Cart page</h3>
-    <div class="mx-auto" v-if="getCartItems.length == 0 && !getEditCardStatus">
-      <div class="empty-text text-center mb-3">Your Cart is empty!</div>
+    <div
+      class="mx-auto w-100 bg-white p-5"
+      v-if="getCartItems.length == 0 && !getEditCardStatus"
+    >
+      <div class="empty-text text-center mb-3">
+        Your shopping cart is empty!
+      </div>
       <div class="cart-icon-arrow-down">
         <i class="fas fa-cart-arrow-down"></i>
       </div>
@@ -71,7 +76,6 @@ export default {
 .empty-text {
   color: #000;
   font-size: 18px;
-  font-weight: bold;
 }
 .add-empty-text {
   font-size: 14px;

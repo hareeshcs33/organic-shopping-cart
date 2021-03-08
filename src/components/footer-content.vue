@@ -86,6 +86,7 @@ export default {
 <style scoped>
 .footer-content {
   background-color: #efefef;
+  border-top: 1px solid #ccc;
   min-height: 75vh;
 }
 .footer {
