@@ -283,6 +283,32 @@ ul {
   color: #454545;
 }
 
+ul li {
+  list-style: none;
+}
+
+.flowers-wrapper {
+  max-height: 500px;
+  overflow: auto;
+}
+
+.flowers-list {
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.gal-item {
+  width: 250px;
+  height: 250px;
+  border: 1px solid #fff;
+  transition: 0.4s;
+}
+
+.flowers-list:hover .gal-item {
+  transform: scale(1.5);
+}
 
 @media (max-width: 767px){
   .navbar ul li a {

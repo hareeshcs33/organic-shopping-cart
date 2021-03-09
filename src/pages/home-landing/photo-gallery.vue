@@ -49,26 +49,44 @@ export default {
 };
 </script>
 <style scoped>
-ul li {
-  list-style: none;
-}
-.flowers-wrapper {
-  max-height: 500px;
-  overflow: auto;
-}
-.flowers-list {
-  width: 250px;
-  height: 250px;
-  overflow: hidden;
-  transition: 0.3s;
-}
-.gal-item {
-  width: 250px;
-  height: 250px;
-  border: 1px solid #fff;
-  transition: 0.4s;
-}
-.flowers-list:hover .gal-item {
-  transform: scale(1.5);
+.aaa {
+  background-image: url("../../assets/flowers/img-1.jpg");
+  background-image: url("../../assets/flowers/img-2.jpg");
+  background-image: url("../../assets/flowers/img-3.jpg");
+  background-image: url("../../assets/flowers/img-4.jpg");
+  background-image: url("../../assets/flowers/img-5.jpg");
+  background-image: url("../../assets/flowers/img-6.jpg");
+  background-image: url("../../assets/flowers/img-7.jpg");
+  background-image: url("../../assets/flowers/img-8.jpg");
+  background-image: url("../../assets/flowers/img-9.jpg");
+  background-image: url("../../assets/flowers/img-10.jpg");
+  background-image: url("../../assets/flowers/img-11.jpg");
+  background-image: url("../../assets/flowers/img-12.jpg");
+  background-image: url("../../assets/flowers/img-13.jpg");
+  background-image: url("../../assets/flowers/img-14.jpg");
+  background-image: url("../../assets/flowers/img-15.jpg");
+  background-image: url("../../assets/flowers/img-16.jpg");
+  background-image: url("../../assets/flowers/img-17.jpg");
+  background-image: url("../../assets/flowers/img-18.jpg");
+  background-image: url("../../assets/flowers/img-19.jpg");
+  background-image: url("../../assets/flowers/img-20.jpg");
+  background-image: url("../../assets/flowers/img-21.jpg");
+  background-image: url("../../assets/flowers/img-22.jpg");
+  background-image: url("../../assets/flowers/img-23.jpg");
+  background-image: url("../../assets/flowers/img-24.jpg");
+  background-image: url("../../assets/flowers/img-25.jpg");
+  background-image: url("../../assets/flowers/img-26.jpg");
+  background-image: url("../../assets/flowers/img-27.jpg");
+  background-image: url("../../assets/flowers/img-28.jpg");
+  background-image: url("../../assets/flowers/img-29.jpg");
+  background-image: url("../../assets/flowers/img-30.jpg");
+  background-image: url("../../assets/flowers/img-31.jpg");
+  background-image: url("../../assets/flowers/img-32.jpg");
+  background-image: url("../../assets/flowers/img-33.jpg");
+  background-image: url("../../assets/flowers/img-34.jpg");
+  background-image: url("../../assets/flowers/img-35.jpg");
+  background-image: url("../../assets/flowers/img-36.jpg");
+  background-image: url("../../assets/flowers/img-37.jpg");
+  background-image: url("../../assets/flowers/img-38.jpg");
 }
 </style>

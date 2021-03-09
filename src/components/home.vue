@@ -31,6 +31,46 @@
           Fruit Seeds
         </div>
       </div>
+      <div
+        class="d-flex align-items-center justify-content-center flex-wrap flowers-wrapper filter-img-block my-5"
+      >
+        <div
+          class="flowers-list position-relative"
+          @click="getSeedsFilter('all')"
+        >
+          <img src="../assets/mixed-all.png" class="gal-item" alt="All" />
+          <div class="gal-item-text">ALL</div>
+        </div>
+        <div
+          class="flowers-list position-relative"
+          @click="getSeedsFilter('flower')"
+        >
+          <img
+            src="../assets/mixed-flowers.png"
+            class="gal-item"
+            alt="Flowers"
+          />
+          <div class="gal-item-text">Flowers</div>
+        </div>
+        <div
+          class="flowers-list position-relative"
+          @click="getSeedsFilter('vegetable')"
+        >
+          <img
+            src="../assets/mixed-vegetables.png"
+            class="gal-item"
+            alt="Vegetables"
+          />
+          <div class="gal-item-text">Vegetables</div>
+        </div>
+        <div
+          class="flowers-list position-relative"
+          @click="getSeedsFilter('fruit')"
+        >
+          <img src="../assets/mixed-fruits.png" class="gal-item" alt="Fruits" />
+          <div class="gal-item-text">Fruits</div>
+        </div>
+      </div>
       <div class="row">
         <template v-if="filteredItems.length > 0">
           <card
@@ -132,5 +172,23 @@ export default {
   color: blue;
   background-color: #b1bbff52;
   border-bottom: 3px solid blue;
+}
+
+.gal-item-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  transition: 0.4s;
+}
+.flowers-list:hover .gal-item-text {
+  top: 90%;
 }
 </style>
