@@ -1,12 +1,12 @@
 <template>
   <div class="photo-gallery">
     <h3 class="text-center">Featured Products</h3>
-    <div>Photo Gallery</div>
+    <div>Flowers Photo Gallery</div>
     <div class="bg-white p-4">
       <ul
-        class="d-flex align-items-center justify-content-center flex-wrap flowers-wrapper"
+        class="d-flex align-items-center justify-content-center flex-wrap gal-item-wrapper"
       >
-        <li v-for="num in this.count" :key="num" class="flowers-list">
+        <li v-for="num in this.count" :key="num" class="gal-item-list">
           <img :src="'/static/img/img-' + num + '.jpg'" class="gal-item" />
         </li>
       </ul>
@@ -49,7 +49,7 @@ export default {
 };
 </script>
 <style scoped>
-.aaa {
+.flowersG {
   background-image: url("../../assets/flowers/img-1.jpg");
   background-image: url("../../assets/flowers/img-2.jpg");
   background-image: url("../../assets/flowers/img-3.jpg");

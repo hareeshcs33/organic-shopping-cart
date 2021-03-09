@@ -32,17 +32,17 @@
         </div>
       </div>
       <div
-        class="d-flex align-items-center justify-content-center flex-wrap flowers-wrapper filter-img-block my-5"
+        class="d-flex align-items-center justify-content-center flex-wrap gal-item-wrapper filter-img-block my-5"
       >
         <div
-          class="flowers-list position-relative"
+          class="gal-item-list position-relative"
           @click="getSeedsFilter('all')"
         >
           <img src="../assets/mixed-all.png" class="gal-item" alt="All" />
           <div class="gal-item-text">ALL</div>
         </div>
         <div
-          class="flowers-list position-relative"
+          class="gal-item-list position-relative"
           @click="getSeedsFilter('flower')"
         >
           <img
@@ -53,7 +53,7 @@
           <div class="gal-item-text">Flowers</div>
         </div>
         <div
-          class="flowers-list position-relative"
+          class="gal-item-list position-relative"
           @click="getSeedsFilter('vegetable')"
         >
           <img
@@ -64,7 +64,7 @@
           <div class="gal-item-text">Vegetables</div>
         </div>
         <div
-          class="flowers-list position-relative"
+          class="gal-item-list position-relative"
           @click="getSeedsFilter('fruit')"
         >
           <img src="../assets/mixed-fruits.png" class="gal-item" alt="Fruits" />
@@ -108,12 +108,14 @@
     </div>
     <flower-photo-gallery></flower-photo-gallery>
     <vegetable-photo-gallery></vegetable-photo-gallery>
+    <fruit-photo-gallery></fruit-photo-gallery>
   </div>
 </template>
 
 <script>
 import Card from "../pages/home-landing/card.vue";
 import FlowerPhotoGallery from "../pages/home-landing/flower-photo-gallery.vue";
+import FruitPhotoGallery from "../pages/home-landing/fruit-photo-gallery.vue";
 import VegetablePhotoGallery from "../pages/home-landing/vegetable-photo-gallery.vue";
 
 export default {
@@ -155,7 +157,8 @@ export default {
   components: {
     Card,
     FlowerPhotoGallery,
-    VegetablePhotoGallery
+    VegetablePhotoGallery,
+    FruitPhotoGallery
   }
 };
 </script>
@@ -191,7 +194,7 @@ export default {
   background: rgba(0, 0, 0, 0.4);
   transition: 0.4s;
 }
-.flowers-list:hover .gal-item-text {
+.gal-item-list:hover .gal-item-text {
   top: 90%;
 }
 </style>

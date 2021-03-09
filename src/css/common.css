@@ -287,12 +287,12 @@ ul li {
   list-style: none;
 }
 
-.flowers-wrapper {
+.gal-item-wrapper {
   max-height: 500px;
   overflow: auto;
 }
 
-.flowers-list {
+.gal-item-list {
   width: 250px;
   height: 250px;
   overflow: hidden;
@@ -306,7 +306,7 @@ ul li {
   transition: 0.4s;
 }
 
-.flowers-list:hover .gal-item {
+.gal-item-list:hover .gal-item {
   transform: scale(1.5);
 }
 
