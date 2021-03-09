@@ -106,13 +106,15 @@
         </div>
       </div>
     </div>
-    <photo-gallery></photo-gallery>
+    <flower-photo-gallery></flower-photo-gallery>
+    <vegetable-photo-gallery></vegetable-photo-gallery>
   </div>
 </template>
 
 <script>
 import Card from "../pages/home-landing/card.vue";
-import PhotoGallery from "../pages/home-landing/photo-gallery.vue";
+import FlowerPhotoGallery from "../pages/home-landing/flower-photo-gallery.vue";
+import VegetablePhotoGallery from "../pages/home-landing/vegetable-photo-gallery.vue";
 
 export default {
   name: "home",
@@ -152,7 +154,8 @@ export default {
   },
   components: {
     Card,
-    PhotoGallery
+    FlowerPhotoGallery,
+    VegetablePhotoGallery
   }
 };
 </script>
