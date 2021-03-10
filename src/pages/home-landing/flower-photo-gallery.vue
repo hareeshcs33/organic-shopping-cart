@@ -1,6 +1,6 @@
 <template>
   <div class="photo-gallery mb-5">
-    <div>Flowers Photo Gallery</div>
+    <div class="px-3">Flowers Photo Gallery</div>
     <div class="bg-white p-4">
       <ul
         class="d-flex align-items-center justify-content-center flex-wrap gal-item-wrapper"

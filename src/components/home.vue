@@ -108,10 +108,10 @@
     </div>
     <h3 class="text-center">Featured Products</h3>
     <div
-      class="d-flex align-items-center justify-content-center flex-column flex-md-row"
+      class="d-flex align-items-center justify-content-center flex-column flex-md-row mx-3"
     >
       <button
-        class="btn filter-link m-3 px-4"
+        class="btn filter-link m-1 px-4 w-100"
         :class="
           this.selectedPhotoGallery == 'flower-photo-gallery' ? 'active' : ''
         "
@@ -120,7 +120,7 @@
         Flower Photo Gallery
       </button>
       <button
-        class="btn filter-link m-3 px-4"
+        class="btn filter-link m-1 px-4 w-100"
         :class="
           this.selectedPhotoGallery == 'vegetable-photo-gallery' ? 'active' : ''
         "
@@ -129,7 +129,7 @@
         Vegetable Photo Gallery
       </button>
       <button
-        class="btn filter-link m-3 px-4"
+        class="btn filter-link m-1 px-4 w-100"
         :class="
           this.selectedPhotoGallery == 'fruit-photo-gallery' ? 'active' : ''
         "

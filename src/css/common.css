@@ -330,10 +330,13 @@ ul li {
 }
 
 .filter-link {
-  border-left: 1px solid transparent;
-  border-top: 1px solid transparent;
-  border-right: 1px solid transparent;
-  border-bottom: 3px solid transparent;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  border-left: 1px solid orange;
+  border-top: 1px solid orange;
+  border-right: 1px solid orange;
+  border-bottom: 3px solid orange;
   cursor: pointer;
   margin-right: 3px;
 }
@@ -351,11 +354,27 @@ ul li {
 .filter-link.active {
   color: blue;
   background-color: #b1bbff52;
+  border-left: 1px solid blue;
+  border-top: 1px solid blue;
+  border-right: 1px solid blue;
   border-bottom: 3px solid blue;
 }
 
 @media (max-width: 767px){
   .navbar ul li a {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 580px) {
+  .filter-link {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 380px) {
+  .filter-link {
+    font-size: 11px;
   }
 }
