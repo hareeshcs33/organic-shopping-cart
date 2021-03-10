@@ -1,5 +1,5 @@
 <template>
-  <div class="photo-gallery">
+  <div class="photo-gallery mb-5">
     <h3 class="text-center">Featured Products</h3>
     <div>Vegetables Photo Gallery</div>
     <div class="bg-white p-4">
@@ -20,7 +20,7 @@
         </button>
         <button
           class="btn btn-primary btn-sm px-3"
-          :disabled="this.count >= 38"
+          :disabled="this.count >= 29"
           @click="nextItems"
         >
           NEXT >>>

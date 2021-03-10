@@ -1,5 +1,5 @@
 <template>
-  <div class="photo-gallery">
+  <div class="photo-gallery mb-5">
     <h3 class="text-center">Featured Products</h3>
     <div>Flowers Photo Gallery</div>
     <div class="bg-white p-4">

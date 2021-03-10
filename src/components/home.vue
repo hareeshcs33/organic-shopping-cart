@@ -2,37 +2,37 @@
   <div>
     <div class="container mb-5">
       <div class="d-flex align-items-center justify-content-center mb-3">
-        <div
-          class="p-2 link text-center filter-link"
+        <button
+          class="btn p-2 px-md-4 filter-link"
           @click="getSeedsFilter('all')"
           :class="getActiveClass('all')"
         >
           <i class="fas fa-store"></i> All Seeds
-        </div>
-        <div
-          class="p-2 link text-center filter-link"
+        </button>
+        <button
+          class="btn p-2 px-md-4 filter-link"
           @click="getSeedsFilter('flower')"
           :class="getActiveClass('flower')"
         >
           Flower Seeds
-        </div>
-        <div
-          class="p-2 link text-center filter-link"
+        </button>
+        <button
+          class="btn p-2 px-md-4 filter-link"
           @click="getSeedsFilter('vegetable')"
           :class="getActiveClass('vegetable')"
         >
           Vegetable Seeds
-        </div>
-        <div
-          class="p-2 link text-center filter-link"
+        </button>
+        <button
+          class="btn p-2 px-md-4 filter-link"
           @click="getSeedsFilter('fruit')"
           :class="getActiveClass('fruit')"
         >
           Fruit Seeds
-        </div>
+        </button>
       </div>
       <div
-        class="d-flex align-items-center justify-content-center flex-wrap gal-item-wrapper filter-img-block my-5"
+        class="d-flex align-items-center justify-content-center flex-wrap gal-item-wrapper filter-img-block my-4 my-md-5"
       >
         <div
           class="gal-item-list position-relative"
@@ -106,9 +106,40 @@
         </div>
       </div>
     </div>
-    <flower-photo-gallery></flower-photo-gallery>
-    <vegetable-photo-gallery></vegetable-photo-gallery>
-    <fruit-photo-gallery></fruit-photo-gallery>
+    <div
+      class="d-flex align-items-center justify-content-center flex-column flex-md-row"
+    >
+      <button
+        class="btn filter-link m-3 px-4"
+        :class="
+          this.selectedPhotoGallery == 'flower-photo-gallery' ? 'active' : ''
+        "
+        @click="setSelectedPhotoGallery('flower-photo-gallery')"
+      >
+        Flower Photo Gallery
+      </button>
+      <button
+        class="btn filter-link m-3 px-4"
+        :class="
+          this.selectedPhotoGallery == 'vegetable-photo-gallery' ? 'active' : ''
+        "
+        @click="setSelectedPhotoGallery('vegetable-photo-gallery')"
+      >
+        Vegetable Photo Gallery
+      </button>
+      <button
+        class="btn filter-link m-3 px-4"
+        :class="
+          this.selectedPhotoGallery == 'fruit-photo-gallery' ? 'active' : ''
+        "
+        @click="setSelectedPhotoGallery('fruit-photo-gallery')"
+      >
+        Fruit Photo Gallery
+      </button>
+    </div>
+    <keep-alive>
+      <component :is="selectedPhotoGallery"></component>
+    </keep-alive>
   </div>
 </template>
 
@@ -124,7 +155,8 @@ export default {
     return {
       category: "all",
       filteredItems: [],
-      count: 0
+      count: 0,
+      selectedPhotoGallery: "flower-photo-gallery"
     };
   },
   computed: {
@@ -152,6 +184,9 @@ export default {
     moreItems() {
       this.count += 4;
       console.log("show more items", this.count);
+    },
+    setSelectedPhotoGallery(selectedVal) {
+      this.selectedPhotoGallery = selectedVal;
     }
   },
   components: {
@@ -164,6 +199,9 @@ export default {
 </script>
 <style scoped>
 .filter-link {
+  border-left: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
   border-bottom: 3px solid transparent;
   cursor: pointer;
   margin-right: 3px;
@@ -171,6 +209,9 @@ export default {
 .filter-link:hover {
   color: blue;
   background-color: #b1bbff52;
+  border-left: 1px solid blue;
+  border-top: 1px solid blue;
+  border-right: 1px solid blue;
   border-bottom: 3px solid blue;
   transition: 0.4s;
 }
