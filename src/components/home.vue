@@ -106,6 +106,7 @@
         </div>
       </div>
     </div>
+    <h3 class="text-center">Featured Products</h3>
     <div
       class="d-flex align-items-center justify-content-center flex-column flex-md-row"
     >
@@ -197,45 +198,4 @@ export default {
   }
 };
 </script>
-<style scoped>
-.filter-link {
-  border-left: 1px solid transparent;
-  border-top: 1px solid transparent;
-  border-right: 1px solid transparent;
-  border-bottom: 3px solid transparent;
-  cursor: pointer;
-  margin-right: 3px;
-}
-.filter-link:hover {
-  color: blue;
-  background-color: #b1bbff52;
-  border-left: 1px solid blue;
-  border-top: 1px solid blue;
-  border-right: 1px solid blue;
-  border-bottom: 3px solid blue;
-  transition: 0.4s;
-}
-.filter-link.active {
-  color: blue;
-  background-color: #b1bbff52;
-  border-bottom: 3px solid blue;
-}
-
-.gal-item-text {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.4);
-  transition: 0.4s;
-}
-.gal-item-list:hover .gal-item-text {
-  top: 90%;
-}
-</style>
+<style scoped></style>
