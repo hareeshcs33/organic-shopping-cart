@@ -11,7 +11,7 @@
           :index="index"
         ></card>
       </template>
-      <div class="col-12" v-else>
+      <div class="col-12 bg-white p-5" v-else>
         <h2 class="text-center mb-3">
           Your <i class="fas fa-heart"></i> Items are empty!
         </h2>
