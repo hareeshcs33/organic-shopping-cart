@@ -17,3 +17,5 @@ npm run dev
 
 <!-- For deployment -->
 npm run build
+
+Live <a href="https://naturalfarmshop.netlify.app/" target="_blank">DEMO</a>
